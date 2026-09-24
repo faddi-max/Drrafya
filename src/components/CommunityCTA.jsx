@@ -46,8 +46,8 @@ export default function CommunityCTA() {
 
             {/* CTA Button */}
             <div className="cm-action">
-              <a href="#book" className="cm-cta-btn">
-                <span>Join the Sisterhood Forum</span>
+              <a href="https://wa.me/923217183160" className="cm-cta-btn">
+                <span>Join Our Community</span>
                 <ArrowRight size={18} className="cm-btn-icon" />
               </a>
             </div>

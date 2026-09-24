@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Check, Mail, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import "./contactusform.css";
+import { storeContactDetails } from "../controllers/contact/contactformcontroller.jsx";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -12,14 +13,53 @@ export default function ContactUs() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form action here
-    console.log("Form Submitted:", formData);
+    setLoading(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    // Mapping frontend state fields to match Laravel database column names exactly
+    const payload = {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      email_address: formData.email,
+      phone_number: formData.phone,
+      your_message: formData.message,
+    };
+
+    try {
+      const response = await storeContactDetails(payload);
+      
+      if (response && response.success) {
+        setSuccessMessage(response.message || "Your message has been sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.errors) {
+        const errors = error.response.data.errors;
+        const firstKey = Object.keys(errors)[0];
+        setErrorMessage(errors[firstKey][0]);
+      } else {
+        setErrorMessage("Something went wrong. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,7 +75,6 @@ export default function ContactUs() {
             </p>
 
             <div className="contact-checklist">
-              
               <div className="check-item">
                 <span className="check-icon"><Check size={14} strokeWidth={3} /></span>
                 <span>Learn which plan is right for your team</span>
@@ -62,9 +101,9 @@ export default function ContactUs() {
               <p className="mini-card-desc">
                 For other queries, please get in touch with us via email.
               </p>
-              <a href="mailto:hello@codivoo.com" className="mini-card-link">
+              <a href="mailto:contactcreativetips@gmail.com" className="mini-card-link">
                 <Mail size={16} />
-                <span>hello@codivoo.com</span>
+                <span>contactcreativetips@gmail.com</span>
               </a>
             </div>
 
@@ -84,6 +123,18 @@ export default function ContactUs() {
         {/* RIGHT SIDE FORM */}
         <div className="contact-form-card">
           <h3 className="form-title">Contact for Consultation</h3>
+
+          {successMessage && (
+            <div className="mb-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-medium">
+              {successMessage}
+            </div>
+          )}
+
+          {errorMessage && (
+            <div className="mb-4 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
+              {errorMessage}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-row">
@@ -126,7 +177,7 @@ export default function ContactUs() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="contact.uixmk@gmail.com"
+                  placeholder="contactcreativetips@gmail.com"
                   className="field-input"
                   required
                 />
@@ -147,8 +198,6 @@ export default function ContactUs() {
               </fieldset>
             </div>
 
-            
-
             <div className="field-wrapper">
               <fieldset className="field-fieldset">
                 <legend className="field-label">Your message</legend>
@@ -168,9 +217,10 @@ export default function ContactUs() {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
+              disabled={loading}
               className="submit-btn"
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </motion.button>
           </form>
         </div>

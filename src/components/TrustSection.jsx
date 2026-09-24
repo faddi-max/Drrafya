@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FileCheck, Stethoscope, Clock } from "lucide-react";
 import "./TrustSection.css";
+import { useNavigate } from "react-router-dom";
 
 export default function TrustSection() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const trustCards = [
     {
@@ -77,6 +79,7 @@ export default function TrustSection() {
             className="cta-button"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
+            onClick={() => navigate(`/blogs`)}
           >
             {t("Read More", "Read More")}
           </motion.button>

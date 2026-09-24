@@ -14,26 +14,26 @@ import "./Footer.css";
 import Drrafyalogo from '../assets/rafyalogo.png';
 
 const socials = [
-  { key: "fb", Icon: Facebook, label: "Facebook", href: "#" },
-  { key: "ig", Icon: Instagram, label: "Instagram", href: "#" },
-  { key: "yt", Icon: Youtube, label: "YouTube", href: "#" },
-  { key: "tw", Icon: Twitter, label: "Twitter", href: "#" },
+  { key: "fb", Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/drrafiyashoaib" },
+  { key: "ig", Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/drrafiyazahir" },
+  { key: "yt", Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@dr.rafiyazahir4639" },
+  { key: "tw", Icon: Twitter, label: "Twitter", href: "https://x.com/Drrafiyazahir" },
 ];
 
 const lifecycleLinks = [
-  { label: "Preconception", href: "#preconception" },
-  { label: "Pregnancy Hub", href: "#pregnancy" },
-  { label: "Labor & Delivery", href: "#delivery" },
-  { label: "Postpartum & Recovery", href: "#postpartum" },
-  { label: "Infertility/IVF", href: "#infertility" },
+  { label: "Home", href: "#preconception" },
+  { label: "IUI Treatment", href: "#pregnancy" },
+  { label: "NICU Services", href: "#delivery" },
+  // { label: "Postpartum & Recovery", href: "#postpartum" },
+  // { label: "Infertility/IVF", href: "#infertility" },
 ];
 
 const resourceLinks = [
-  { label: "Media Center", href: "#media" },
-  { label: "Calculators & Tools", href: "#tools" },
-  { label: "E-Book Library", href: "#library" },
-  { label: "Sisterhood Forums", href: "#forums" },
-  { label: "Podcast Series", href: "#podcast" },
+  { label: "Refund Policy", href: "/refundpolicy" },
+  { label: "Privacy Policy", href: "/privacypolcy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  // { label: "Sisterhood Forums", href: "#forums" },
+  // { label: "Podcast Series", href: "#podcast" },
 ];
 
 export default function Footer() {
@@ -54,8 +54,7 @@ export default function Footer() {
               <img className="footer-logo" src={Drrafyalogo} alt="Dr Rafya Zahir" />
 
               <p className="brand-bio-text">
-                Redefining women&apos;s healthcare with compassionate clinical care, 
-                advanced evidence-based tools, and personalized life-stage guidance.
+                A Lifesaving Choice for Mothers and Babies Utilizing Laparoscopic Technologies with Hundred Percent Satisfaction and No Loss Rate 
               </p>
             </div>
 
@@ -88,7 +87,7 @@ export default function Footer() {
           {/* Bento Box 2: Lifecycle Hubs */}
           <div className="bento-box">
             <div>
-              <p className="bento-title">Lifecycle Hubs</p>
+              <p className="bento-title">Quick Links</p>
               <ul className="bento-nav-list">
                 {lifecycleLinks.map((item) => (
                   <li key={item.label}>
@@ -104,7 +103,7 @@ export default function Footer() {
           {/* Bento Box 3: Resources */}
           <div className="bento-box">
             <div>
-              <p className="bento-title">Resources</p>
+              <p className="bento-title">Policies</p>
               <ul className="bento-nav-list">
                 {resourceLinks.map((item) => (
                   <li key={item.label}>
@@ -127,8 +126,8 @@ export default function Footer() {
                   <div className="contact-icon-wrapper">
                     <Phone size={18} />
                   </div>
-                  <a className="contact-anchor" href="tel:+923001344417">
-                    +92 300 1344417
+                  <a className="contact-anchor" href="https://wa.me/923217183160">
+                    +92 3217183160
                   </a>
                 </div>
 
@@ -137,7 +136,7 @@ export default function Footer() {
                     <Mail size={18} />
                   </div>
                   <a className="contact-anchor" href="mailto:clinic@drrafiya.com">
-                    clinic@drrafiya.com
+                    info@drrafiyazahir.com
                   </a>
                 </div>
 
@@ -145,7 +144,8 @@ export default function Footer() {
                   <div className="contact-icon-wrapper">
                     <MapPin size={18} />
                   </div>
-                  <span>DHA Phase 6, Lahore, Pakistan</span>
+                  <span>
+Darual Shifa Hospital, Tariq Road, Opposite G2 Marques, Sialkot.</span>
                 </div>
               </div>
             </div>
@@ -167,8 +167,8 @@ export default function Footer() {
         <div className="footer-bar">
           <p>© {new Date().getFullYear()} Dr. Rafiya Zahir. All rights reserved.</p>
           <div className="legal-links">
-            <a href="#privacy" className="legal-link">Privacy Policy</a>
-            <a href="#terms" className="legal-link">Terms of Service</a>
+            <a href="/privacypolicy" className="legal-link">Privacy Policy</a>
+            <a href="#terms" className="legal-link">Terms & Conditions</a>
           </div>
         </div>
 

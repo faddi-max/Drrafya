@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/homepage.jsx";
 import Blogs from "./components/Blogs";
-import BlogPost from "./components/BlogPost";
+import BlogsbyCategories from "./components/BlogsbyCategories.jsx";
 import BabyNames from "./components/baby-names";
 import PregnancyQuestionsCenter from "./components/PregnancyQuestionsCenter";
 import JourneyDetail from "./components/JourneyDetail";
@@ -21,6 +21,13 @@ import ConceptionDateCalculator from './tools/ConceptionDateCalculator.jsx';
 import IVFDueDateCalculator from './tools/IVFDueDateCalculator.jsx';
 import Chinesegenderpredictor from './tools/Chinesegenderpredictor.jsx';
 import Birthchartcalculator from './tools/Birthchartcalculator.jsx';
+import SingleBlogPost from './components/SingleBlogPost.jsx';
+import Bookappointment from './pages/bookappointmentform.jsx';
+import SiteScraper from './components/SiteZipDownloader.jsx';
+import Privacypolcy from './pages/Privacypolicy.jsx';
+import Refundpolicy from './pages/Refundpolicy.jsx';
+import TermsandconditionsPage from './pages/termsandconditions.jsx'
+import AboutUsPage from './pages/AboutusPages.jsx';
 import "./i18n";
 
 
@@ -34,7 +41,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/blogs/:slug" element={<BlogsbyCategories />} />
+          <Route path="/blog/:slug" element={<SingleBlogPost/>} />
 
           <Route path="/baby-names" element={<BabyNames />} />
           <Route path="/pregnancyquestionscenter" element={<PregnancyQuestionsCenter />} />
@@ -51,6 +59,11 @@ export default function App() {
           <Route path="/baby-name" element={<Navigate to="/baby-names" replace />} />
           <Route path="/tools/baby-names" element={<Navigate to="/baby-names" replace />} />
           <Route path="/contact-us" element={<ContactusPage/>}></Route>
+          <Route path='/book-appointment' element={<Bookappointment/>}></Route>
+          <Route path="/privacypolicy" element={<Privacypolcy/>}></Route>
+          <Route path='/refundpolicy' element={<Refundpolicy/>}></Route>
+          <Route path="/terms-and-conditions" element={<TermsandconditionsPage/>}></Route>
+          <Route path="/about" element={<AboutUsPage/>}></Route>
 
 
           {/* Tools Routes */}
@@ -61,7 +74,7 @@ export default function App() {
           <Route path="/ivf-due-date-calculator" element={<IVFDueDateCalculator />} />
           <Route path="/chinese-gender-predictor" element={<Chinesegenderpredictor />} />
           <Route path="/birth-chart-calculator" element={<Birthchartcalculator />} />
-          <Route></Route>
+          <Route path='/siteextractor' element={<SiteScraper/>}></Route>
 
           <Route path="*" element={<div className="p-10 font-bold">Page not found</div>} />
         </Routes>

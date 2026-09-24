@@ -138,11 +138,11 @@ export default function Navbar() {
           </div>
 
           <Link
-            to="/appointments"
-            onClick={() => setActiveTab("Appointments")}
-            className={`nav-tab ${activeTab === "Appointments" ? "active" : ""}`}
+            to="/book-appointment"
+            onClick={() => setActiveTab("Appointment")}
+            className={`nav-tab ${activeTab === "Appointment" ? "active" : ""}`}
           >
-            {t("Appointments", "Appointments")}
+            {t("Appointment", "Appointment")}
           </Link>
 
           {/* Doctors Dropdown */}
@@ -199,6 +199,15 @@ export default function Navbar() {
             className={`nav-tab ${activeTab === "About" ? "active" : ""}`}
           >
             {t("About", "About")}
+          </Link>
+
+
+          <Link
+            to="/blogs"
+            onClick={() => setActiveTab("Blogs")}
+            className={`nav-tab ${activeTab === "Blogs" ? "active" : ""}`}
+          >
+            {t("Blogs", "Blogs")}
           </Link>
 
           <Link

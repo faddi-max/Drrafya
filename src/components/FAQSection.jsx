@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Plus, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./FAQSection.css";
+import faqsimage from '../assets/faqs.webp';
+import { useNavigate } from "react-router-dom";
 
 const faqData = [
   {
@@ -44,6 +46,7 @@ const faqData = [
 
 export default function FAQSection() {
   const [openId, setOpenId] = useState(1);
+  const navigate = useNavigate();
 
   const toggleFAQ = (id) => {
     setOpenId((prev) => (prev === id ? null : id));
@@ -70,7 +73,7 @@ export default function FAQSection() {
             <div className="booking-avatar-wrapper">
               <div className="booking-avatar-glow" />
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop"
+                src={faqsimage}
                 alt="Representative"
                 className="booking-avatar"
               />
@@ -81,13 +84,12 @@ export default function FAQSection() {
               If you have any questions, just book a 15-minute call with us before subscribing
             </p>
 
-            <button type="button" className="booking-btn">
+            <button type="button" className="booking-btn"   onClick={() => window.open('https://wa.me/923217183160', '_blank', 'noopener,noreferrer')}>
               Book a Free Call!
             </button>
           </div>
         </div>
 
-        {/* RIGHT COLUMN - ACCORDION */}
         <div className="faq-accordion-list">
           {faqData.map((item) => {
             const isOpen = openId === item.id;
