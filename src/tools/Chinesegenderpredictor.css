@@ -1,26 +1,39 @@
 .cgp-wrap {
-  --bg-light: #F6F6FA;
-  --bg-white: #FFFFFF;
-  --text-dark: #17162B;
-  --text-soft: #6B7280;
-  --pink: #D6376E;
-  --pink-deep: #B32A5C;
-  --pink-light: #FBE3EC;
-  --pink-lighter: #FCEEF3;
-  --blue: #3D6FD1;
-  --blue-light: #E4ECFC;
-  --border-color: #ECE8ED;
-  --box-shadow: 0 10px 30px rgba(23, 22, 43, 0.06);
+  --cgp-pink: #D6457D;
+  --cgp-pink-dark: #9E1F4E;
+  --cgp-gold: #CCA331;
+  --cgp-gold-dark: #B38E28;
+  --cgp-text-dark: #0F172A;
+  --cgp-text-muted: #64748B;
 
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 56px 28px 80px;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding: 60px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #FFF5F8 0%,
+    #FAFAFC 50%,
+    #FFFBEB 100%
+  );
+
+  color: var(--cgp-text-dark);
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+
+  text-align: center;
   box-sizing: border-box;
-  text-align: center; /* centers everything inside */
 }
 
 .cgp-wrap *,
@@ -29,315 +42,565 @@
   box-sizing: border-box;
 }
 
-/* ---- the little badge on top ---- */
+/* Background Glow */
+
+.cgp-wrap::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: -120px;
+  left: -100px;
+  border-radius: 50%;
+  background: var(--cgp-pink);
+  filter: blur(100px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.cgp-wrap::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: -100px;
+  bottom: -100px;
+  border-radius: 50%;
+  background: var(--cgp-gold);
+  filter: blur(100px);
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+/* Header */
+
 .cgp-eyebrow {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--pink-deep);
+  position: relative;
+  z-index: 1;
+
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  background: var(--pink-light);
-  padding: 8px 16px 8px 12px;
+  gap: 8px;
+
+  padding: 7px 17px;
+  margin-bottom: 20px;
+
   border-radius: 999px;
-  margin-bottom: 22px;
+
+  background: rgba(214, 69, 125, 0.08);
+  color: var(--cgp-pink);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
+
 .cgp-eyebrow::before {
   content: "✦";
-  font-size: 12px;
-  color: var(--pink);
 }
 
 .cgp-h1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
-  font-size: 46px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0 0 16px;
-  color: var(--text-dark);
-  text-align: center; /* explicitly center the heading */
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 12px;
+
+  color: var(--cgp-text-dark);
+
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
+
 .cgp-h1 em {
-  font-style: italic;
-  font-weight: 800;
-  color: var(--pink);
+  font-style: normal;
+
+  background: linear-gradient(
+    135deg,
+    var(--cgp-pink),
+    var(--cgp-pink-dark)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cgp-sub {
-  font-size: 16px;
-  color: var(--text-soft);
-  max-width: 560px;
-  line-height: 1.6;
-  margin: 0 auto 40px; /* centered with auto margins */
-  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  max-width: 580px;
+
+  margin: 0 auto 36px;
+
+  color: var(--cgp-text-muted);
+
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-/* ---- the main card ---- */
+/* Main Card */
+
 .cgp-card {
-  background: var(--bg-white);
-  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 640px;
+
+  margin: 0 auto;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border: 1px solid rgba(241, 245, 249, 0.9);
   border-radius: 24px;
-  padding: 32px;
-  box-shadow: var(--box-shadow);
-  text-align: left; /* reset to left for form elements */
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.05),
+    0 5px 20px rgba(214, 69, 125, 0.05);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  text-align: left;
 }
+
+/* Labels */
 
 .cgp-field-label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--text-dark);
-  margin-bottom: 12px;
   display: block;
+
+  margin-bottom: 10px;
+
+  color: #334155;
+
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-/* segmented control - i like this pattern */
+/* Segmented Buttons */
+
 .cgp-segmented {
   display: grid;
-  gap: 8px;
+  gap: 16px;
+
   margin-bottom: 26px;
 }
+
 .cgp-segmented-2 {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
+
 .cgp-segmented button {
-  font-family: 'Inter', sans-serif;
-  font-size: 13.5px;
-  font-weight: 600;
-  padding: 12px 8px;
-  border-radius: 999px;
-  border: 1.5px solid var(--border-color);
-  background: var(--bg-light);
-  color: var(--text-soft);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.cgp-segmented button:hover {
-  border-color: var(--pink);
-  color: var(--pink-deep);
-}
-.cgp-segmented button.active {
-  background: var(--pink);
-  border-color: var(--pink);
-  color: #fff;
-}
-
-/* date inputs in a row */
-.cgp-row {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-.cgp-date-field {
-  flex: 1;
-  min-width: 200px;
-}
-.cgp-wrap input[type='date'] {
   width: 100%;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1.5px solid var(--border-color);
-  background: var(--bg-light);
-  color: var(--text-dark);
-}
-.cgp-wrap input[type='date']:focus {
-  outline: none;
-  border-color: var(--pink);
-  box-shadow: 0 0 0 3px var(--pink-light);
-}
 
-/* the main action button */
-.cgp-calc-btn {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 14.5px;
-  padding: 15px 28px;
-  border-radius: 999px;
-  border: none;
-  background: var(--pink);
-  color: #fff;
+  padding: 16px 20px;
+
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+
+  background: #FFFFFF;
+  color: var(--cgp-text-dark);
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+
   cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.12s ease, background 0.15s ease;
-  box-shadow: 0 8px 20px rgba(214, 55, 110, 0.28);
-  display: inline-block; /* allows text-align center to work */
-}
-.cgp-calc-btn:hover {
-  background: var(--pink-deep);
-}
-.cgp-calc-btn:active {
-  transform: scale(0.98);
-}
-.cgp-calc-btn:focus-visible {
-  outline: 2px solid var(--pink-deep);
-  outline-offset: 2px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
-/* error states */
-.cgp-err {
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--pink-deep);
-  margin-top: 12px;
-  background: var(--pink-lighter);
-  border-radius: 10px;
-  padding: 10px 14px;
+.cgp-segmented button:hover {
+  border-color: var(--cgp-pink);
+
+  box-shadow:
+    0 0 0 4px rgba(214, 69, 125, 0.08);
 }
 
-.cgp-warning {
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #8A6216;
-  background: #FDF3DC;
-  border-radius: 10px;
-  padding: 10px 14px;
-  margin: 14px 4px 0;
-  line-height: 1.5;
+.cgp-segmented button.active {
+  background: linear-gradient(
+    135deg,
+    rgba(214, 69, 125, 0.08),
+    rgba(204, 163, 49, 0.06)
+  );
+
+  border-color: rgba(214, 69, 125, 0.35);
+
+  color: var(--cgp-pink-dark);
 }
 
-/* ---- the result section ---- */
-.cgp-result {
-  margin-top: 44px;
-  text-align: left; /* reset for content */
+/* Form Row */
+
+.cgp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  margin-bottom: 26px;
 }
-.cgp-stamp {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 30px 32px;
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
-  background: var(--bg-white);
-  box-shadow: var(--box-shadow);
-  margin-bottom: 8px;
-  flex-wrap: wrap;
-  justify-content: center; /* centers on smaller screens */
+
+.cgp-date-field {
+  min-width: 0;
 }
-.cgp-stamp-ring {
-  width: 68px;
-  height: 68px;
-  flex: 0 0 auto;
-  border-radius: 999px;
+
+/* Date Inputs */
+
+.cgp-wrap input[type="date"] {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  background: #FFFFFF;
+
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+
+  color: var(--cgp-text-dark);
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  outline: none;
+
+  text-align: center;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cgp-wrap input[type="date"]:focus {
+  border-color: var(--cgp-pink);
+
+  box-shadow:
+    0 0 0 4px rgba(214, 69, 125, 0.10);
+}
+
+/* Calculate Button */
+
+.cgp-calc-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 16px 42px;
+
+  border: none;
+  border-radius: 9999px;
+
+  background: linear-gradient(
+    135deg,
+    var(--cgp-gold),
+    var(--cgp-gold-dark)
+  );
+
+  color: #FFFFFF;
+
+  font-family: inherit;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 16px rgba(204, 163, 49, 0.30);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
+
+.cgp-calc-btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 22px rgba(204, 163, 49, 0.40);
+}
+
+/* Error */
+
+.cgp-err {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-bottom: 18px;
+  padding: 13px 16px;
+
+  background: #FEF2F2;
+
+  border: 1px solid #FECACA;
+  border-radius: 12px;
+
+  color: #DC2626;
+
+  font-size: 0.9rem;
+}
+
+/* Warning */
+
+.cgp-warning {
+  margin-top: 18px;
+
+  padding: 13px 16px;
+
+  background: #FFFBEB;
+
+  border: 1px solid #FDE68A;
+  border-radius: 12px;
+
+  color: #92400E;
+
+  font-size: 0.875rem;
+  line-height: 1.55;
+
+  text-align: center;
+}
+
+/* Results */
+
+.cgp-result {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 640px;
+
+  margin: 36px auto 0;
+
+  padding-top: 30px;
+
+  border-top: 1px dashed #E2E8F0;
+
+  text-align: center;
+}
+
+.cgp-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  width: 100%;
+
+  padding: 28px 24px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border: 1px solid #F1F5F9;
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.cgp-stamp-ring {
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.cgp-stamp-ring.boy {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  color: #3B82F6;
+}
+
+.cgp-stamp-ring.girl {
+  background: rgba(214, 69, 125, 0.08);
+  border: 1px solid rgba(214, 69, 125, 0.18);
+  color: var(--cgp-pink);
+}
+
 .cgp-stamp-ring svg {
   width: 30px;
   height: 30px;
 }
-.cgp-stamp-ring.boy {
-  background: var(--blue-light);
-  color: var(--blue);
-}
-.cgp-stamp-ring.girl {
-  background: var(--pink-light);
-  color: var(--pink);
-}
-.cgp-stamp-text .k {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 6px;
-}
-.cgp-stamp-text .due {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1.15;
-}
-.cgp-stamp-text .progress {
-  font-family: 'Inter', sans-serif;
-  font-size: 13.5px;
-  color: var(--text-soft);
-  margin-top: 6px;
-  max-width: 460px;
-  line-height: 1.5;
-}
 
-/* ---- the info cards at the bottom ---- */
-.cgp-facts {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.cgp-facts .f {
-  background: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: var(--box-shadow);
+.cgp-stamp-text {
   text-align: left;
 }
-.cgp-facts .f .dot {
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: var(--pink-light);
-  margin-bottom: 12px;
-}
-.cgp-facts .f .label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
+
+.cgp-stamp-text .k {
+  margin: 0 0 6px;
+
+  color: var(--cgp-text-muted);
+
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 4px;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-.cgp-facts .f .note {
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  color: var(--text-soft);
+
+.cgp-stamp-text .due {
+  margin: 0;
+
+  color: var(--cgp-text-dark);
+
+  font-size: 2.2rem;
+  font-weight: 800;
+
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cgp-stamp-text .progress {
+  margin: 7px 0 0;
+
+  color: var(--cgp-text-muted);
+
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
-/* making it work on smaller screens */
-@media (max-width: 720px) {
-  .cgp-h1 {
-    font-size: 32px;
-  }
-  .cgp-facts {
-    grid-template-columns: 1fr;
-  }
-  .cgp-stamp {
-    flex-direction: column;
-    text-align: center;
-  }
-  .cgp-stamp-text .progress {
-    max-width: 100%;
-  }
+/* Result Facts */
+
+.cgp-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 16px;
+
+  width: 100%;
+
+  margin-top: 16px;
 }
 
-/* footer with the disclaimer */
-.cgp-footer {
-  margin-top: 56px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border-color);
-  font-size: 12.5px;
-  color: var(--text-soft);
-  line-height: 1.6;
+.cgp-facts .f {
+  padding: 20px 14px;
+
+  background: #F8FAFC;
+
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
   text-align: center;
 }
 
-/* respecting user preferences */
-@media (prefers-reduced-motion: reduce) {
-  .cgp-wrap * {
-    transition: none !important;
-    animation: none !important;
+.cgp-facts .f.highlight {
+  background: #FFF5F8;
+
+  border-color: rgba(214, 69, 125, 0.20);
+}
+
+.cgp-facts .f .dot {
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 5px;
+
+  border-radius: 50%;
+
+  background: rgba(214, 69, 125, 0.08);
+}
+
+.cgp-facts .f .label {
+  margin: 0;
+
+  color: var(--cgp-text-muted);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+.cgp-facts .f .note {
+  margin: 0;
+
+  color: var(--cgp-text-dark);
+
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Footer */
+
+.cgp-footer {
+  width: 100%;
+  max-width: 640px;
+
+  margin: 30px auto 0;
+  padding-top: 20px;
+
+  border-top: 1px dashed #E2E8F0;
+
+  color: var(--cgp-text-muted);
+
+  font-size: 0.8rem;
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .cgp-wrap {
+    padding: 45px 16px;
+  }
+
+  .cgp-h1 {
+    font-size: 1.8rem;
+  }
+
+  .cgp-sub {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .cgp-card {
+    padding: 28px 20px;
+  }
+
+  .cgp-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cgp-stamp {
+    flex-direction: column;
+  }
+
+  .cgp-stamp-text {
+    text-align: center;
+  }
+
+  .cgp-stamp-text .due {
+    font-size: 1.8rem;
+  }
+
+  .cgp-facts {
+    grid-template-columns: 1fr;
   }
 }

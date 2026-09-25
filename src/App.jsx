@@ -13,24 +13,24 @@ import FreeHelpline from "./components/FreeLiveHelpline";
 import OvulationCalendar from "./components/OvulationCalendar";
 import PregnancyQuiz from "./components/PregnancyQuiz";
 import PregnancyResources from "./components/PregnancyResources";
-import ContactusPage from './pages/contactus.jsx';
-import Ovulationcalculator from './tools/OvulationCalculator.jsx';
-import Duedatecalculator from './tools/PregnancyCalculator.jsx';
-import PregnancyWeighgainercalculator from './tools/PregnancyWeightCalculator.jsx';
-import ConceptionDateCalculator from './tools/ConceptionDateCalculator.jsx';
-import IVFDueDateCalculator from './tools/IVFDueDateCalculator.jsx';
-import Chinesegenderpredictor from './tools/Chinesegenderpredictor.jsx';
-import Birthchartcalculator from './tools/Birthchartcalculator.jsx';
-import SingleBlogPost from './components/SingleBlogPost.jsx';
-import Bookappointment from './pages/bookappointmentform.jsx';
-import SiteScraper from './components/SiteZipDownloader.jsx';
-import Privacypolcy from './pages/Privacypolicy.jsx';
-import Refundpolicy from './pages/Refundpolicy.jsx';
-import TermsandconditionsPage from './pages/termsandconditions.jsx'
-import AboutUsPage from './pages/AboutusPages.jsx';
+import ContactusPage from "./pages/contactus.jsx";
+import Ovulationcalculator from "./tools/OvulationCalculator.jsx";
+import Duedatecalculator from "./tools/PregnancyCalculator.jsx";
+import PregnancyWeighgainercalculator from "./tools/PregnancyWeightCalculator.jsx";
+import ConceptionDateCalculator from "./tools/ConceptionDateCalculator.jsx";
+import IVFDueDateCalculator from "./tools/IVFDueDateCalculator.jsx";
+import Chinesegenderpredictor from "./tools/Chinesegenderpredictor.jsx";
+import Birthchartcalculator from "./tools/Birthchartcalculator.jsx";
+import SingleBlogPost from "./components/SingleBlogPost.jsx";
+import Bookappointment from "./pages/bookappointmentform.jsx";
+import SiteScraper from "./components/SiteZipDownloader.jsx";
+import Privacypolcy from "./pages/Privacypolicy.jsx";
+import Refundpolicy from "./pages/Refundpolicy.jsx";
+import TermsandconditionsPage from "./pages/termsandconditions.jsx";
+import AboutUsPage from "./pages/AboutusPages.jsx";
+import Resources from "./pages/Resources.jsx";
+
 import "./i18n";
-
-
 
 export default function App() {
   return (
@@ -39,44 +39,155 @@ export default function App() {
 
       <main className="flex-1">
         <Routes>
+          {/* Home */}
           <Route path="/" element={<Home />} />
+
+          {/* Main Pages */}
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogsbyCategories />} />
-          <Route path="/blog/:slug" element={<SingleBlogPost/>} />
+          <Route path="/blog/:slug" element={<SingleBlogPost />} />
+
+          {/* Resources */}
+          <Route path="/resources" element={<Resources />} />
 
           <Route path="/baby-names" element={<BabyNames />} />
-          <Route path="/pregnancyquestionscenter" element={<PregnancyQuestionsCenter />} />
+
+          <Route
+            path="/pregnancyquestionscenter"
+            element={<PregnancyQuestionsCenter />}
+          />
+
           <Route path="/journey/:id" element={<JourneyDetail />} />
 
-          <Route path="/free-live-helpline" element={<FreeHelpline />} />
-          <Route path="/tools/ovulation-calendar" element={<OvulationCalendar />} />
-          <Route path="/tools/due-date" element={<PregnancyDueDateCalculatorPage />} />
-          <Route path="/tools/pregnancy-quiz" element={<PregnancyQuiz />} />
-          <Route path="/pregnancy-resources" element={<PregnancyResources />} />
+          {/* Services & Resources */}
+          <Route
+            path="/free-live-helpline"
+            element={<FreeHelpline />}
+          />
 
-          <Route path="/babyNames" element={<Navigate to="/baby-names" replace />} />
-          <Route path="/babyname" element={<Navigate to="/baby-names" replace />} />
-          <Route path="/baby-name" element={<Navigate to="/baby-names" replace />} />
-          <Route path="/tools/baby-names" element={<Navigate to="/baby-names" replace />} />
-          <Route path="/contact-us" element={<ContactusPage/>}></Route>
-          <Route path='/book-appointment' element={<Bookappointment/>}></Route>
-          <Route path="/privacypolicy" element={<Privacypolcy/>}></Route>
-          <Route path='/refundpolicy' element={<Refundpolicy/>}></Route>
-          <Route path="/terms-and-conditions" element={<TermsandconditionsPage/>}></Route>
-          <Route path="/about" element={<AboutUsPage/>}></Route>
+          <Route
+            path="/tools/ovulation-calendar"
+            element={<OvulationCalendar />}
+          />
 
+          <Route
+            path="/tools/due-date"
+            element={<PregnancyDueDateCalculatorPage />}
+          />
 
-          {/* Tools Routes */}
-          <Route path="/ovulation-calculator" element={<Ovulationcalculator/>}></Route>
-          <Route path="/due-date-calculator" element={<Duedatecalculator/>}></Route>
-          <Route path="/pregnancy-weight-gain-calculator" element={<PregnancyWeighgainercalculator/>}></Route>
-          <Route path="/conception-date-calculator" element={<ConceptionDateCalculator/>}></Route>
-          <Route path="/ivf-due-date-calculator" element={<IVFDueDateCalculator />} />
-          <Route path="/chinese-gender-predictor" element={<Chinesegenderpredictor />} />
-          <Route path="/birth-chart-calculator" element={<Birthchartcalculator />} />
-          <Route path='/siteextractor' element={<SiteScraper/>}></Route>
+          <Route
+            path="/tools/pregnancy-quiz"
+            element={<PregnancyQuiz />}
+          />
 
-          <Route path="*" element={<div className="p-10 font-bold">Page not found</div>} />
+          <Route
+            path="/pregnancy-resources"
+            element={<PregnancyResources />}
+          />
+
+          {/* Baby Names Redirects */}
+          <Route
+            path="/babyNames"
+            element={<Navigate to="/baby-names" replace />}
+          />
+
+          <Route
+            path="/babyname"
+            element={<Navigate to="/baby-names" replace />}
+          />
+
+          <Route
+            path="/baby-name"
+            element={<Navigate to="/baby-names" replace />}
+          />
+
+          <Route
+            path="/tools/baby-names"
+            element={<Navigate to="/baby-names" replace />}
+          />
+
+          {/* General Pages */}
+          <Route
+            path="/contact-us"
+            element={<ContactusPage />}
+          />
+
+          <Route
+            path="/book-appointment"
+            element={<Bookappointment />}
+          />
+
+          <Route
+            path="/privacypolicy"
+            element={<Privacypolcy />}
+          />
+
+          <Route
+            path="/refundpolicy"
+            element={<Refundpolicy />}
+          />
+
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsandconditionsPage />}
+          />
+
+          <Route
+            path="/about"
+            element={<AboutUsPage />}
+          />
+
+          {/* Tools */}
+          <Route
+            path="/ovulation-calculator"
+            element={<Ovulationcalculator />}
+          />
+
+          <Route
+            path="/due-date-calculator"
+            element={<Duedatecalculator />}
+          />
+
+          <Route
+            path="/pregnancy-weight-gain-calculator"
+            element={<PregnancyWeighgainercalculator />}
+          />
+
+          <Route
+            path="/conception-date-calculator"
+            element={<ConceptionDateCalculator />}
+          />
+
+          <Route
+            path="/ivf-due-date-calculator"
+            element={<IVFDueDateCalculator />}
+          />
+
+          <Route
+            path="/chinese-gender-predictor"
+            element={<Chinesegenderpredictor />}
+          />
+
+          <Route
+            path="/birth-chart-calculator"
+            element={<Birthchartcalculator />}
+          />
+
+          {/* Admin / Utility */}
+          <Route
+            path="/siteextractor"
+            element={<SiteScraper />}
+          />
+
+          {/* 404 */}
+          <Route
+            path="*"
+            element={
+              <div className="p-10 font-bold">
+                Page not found
+              </div>
+            }
+          />
         </Routes>
       </main>
 
