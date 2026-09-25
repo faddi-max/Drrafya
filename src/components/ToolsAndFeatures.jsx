@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import "./ToolsAndFeatures.css";
 
 // Individual Inline SVG Illustrations for 100% reliability
@@ -153,17 +154,32 @@ const toolsData = [
   },
 ];
 
-export default function ToolsAndFeatures() {  
+export default function ToolsAndFeatures() {
+  const { t, i18n } = useTranslation();
+
+  const isRTL =
+    i18n.language?.toLowerCase().startsWith("ur") ||
+    i18n.language?.toLowerCase().startsWith("ar");
+
   return (
-    <section className="tools-section">
+    <section
+      className="tools-section"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
       <div className="tools-container">
-        
+
         {/* HEADER */}
         <div className="tools-header">
-          <span className="tools-tag">Interactive Suite</span>
-          <h2 className="tools-title">Tools & Features</h2>
+          <span className="tools-tag">{t("Interactive Suite")}</span>
+
+          <h2 className="tools-title">
+            {t("Tools & Features")}
+          </h2>
+
           <p className="tools-subtitle">
-            Essential calculators, smart trackers, and helpful tools designed to support your journey.
+            {t(
+              "Essential calculators, smart trackers, and helpful tools designed to support your journey."
+            )}
           </p>
         </div>
 
@@ -171,6 +187,7 @@ export default function ToolsAndFeatures() {
         <div className="tools-bento-grid">
           {toolsData.map((item, index) => {
             const IconSVG = item.Illustration;
+
             return (
               <motion.a
                 key={item.id}
@@ -179,7 +196,10 @@ export default function ToolsAndFeatures() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.05,
+                }}
               >
                 {/* ICON / ILLUSTRATION CONTAINER */}
                 <div className="tool-icon-wrapper">
@@ -187,12 +207,17 @@ export default function ToolsAndFeatures() {
                 </div>
 
                 {/* TEXT CONTENT */}
-                <h3 className="tool-card-title">{item.title}</h3>
-                <p className="tool-card-desc">{item.description}</p>
+                <h3 className="tool-card-title">
+                  {t(item.title)}
+                </h3>
+
+                <p className="tool-card-desc">
+                  {t(item.description)}
+                </p>
 
                 {/* ACTION BUTTON */}
                 <span className="tool-link-action">
-                  <span>Explore Tool</span>
+                  <span>{t("Explore Tool")}</span>
                   <ArrowRight size={14} className="tool-arrow" />
                 </span>
               </motion.a>
