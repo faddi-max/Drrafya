@@ -191,3 +191,43 @@
   transform: translateX(4px);
   color: var(--rich-pink);
 }
+.tools-explore-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.tools-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.tools-explore-btn:hover {
+  background: var(--rich-pink);
+  transform: translateY(-2px);
+}
+
+.tools-explore-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.tools-explore-btn:hover svg {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .tools-explore-btn svg {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .tools-explore-btn:hover svg {
+  transform: rotate(180deg) translateX(4px);
+}
