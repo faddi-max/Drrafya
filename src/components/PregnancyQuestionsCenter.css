@@ -1,0 +1,733 @@
+/* ==========================================
+   PREGNANCY QUESTIONS CENTER
+   CLEAN PINK THEME
+   ========================================== */
+
+.question-center-page {
+  background: var(--white);
+  color: var(--black);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* ==========================================
+   MAIN SECTION
+   ========================================== */
+
+.question-center-section {
+  padding: 4.5rem 1.5rem 6rem;
+  background: var(--white);
+}
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+
+.question-center-container {
+  width: 100%;
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.question-center-header {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 3.25rem;
+  text-align: center;
+}
+
+.question-center-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 0.9rem;
+  padding: 0.4rem 1rem;
+
+  border-radius: 9999px;
+
+  background: var(--rich-pink);
+  color: var(--white);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.question-center-title {
+  margin: 0;
+
+  color: var(--black);
+
+  font-size: 2.5rem;
+  font-weight: 800;
+
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+@media (min-width: 640px) {
+  .question-center-title {
+    font-size: 3.15rem;
+  }
+}
+
+.question-center-subtitle {
+  max-width: 650px;
+
+  margin: 0.9rem auto 0;
+
+  color: var(--text-muted);
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   SEARCH
+   ========================================== */
+
+.question-search-wrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 680px;
+
+  margin: 0 auto;
+}
+
+.question-search-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 1.25rem;
+
+  transform: translateY(-50%);
+
+  color: var(--text-muted);
+
+  pointer-events: none;
+}
+
+.question-search-input {
+  width: 100%;
+  height: 3.5rem;
+
+  box-sizing: border-box;
+
+  padding: 0 3.5rem 0 3.25rem;
+
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+
+  background: var(--white);
+  color: var(--black);
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  outline: none;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.035);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.question-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.question-search-input:focus {
+  border-color: var(--rich-pink);
+
+  box-shadow:
+    0 0 0 4px rgba(242, 139, 182, 0.1);
+}
+
+/* ==========================================
+   CLEAR SEARCH
+   ========================================== */
+
+.question-search-clear {
+  position: absolute;
+
+  top: 50%;
+  right: 1.1rem;
+
+  width: 1.85rem;
+  height: 1.85rem;
+
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(242, 139, 182, 0.1);
+  color: var(--rich-pink);
+
+  font-size: 1.1rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.question-search-clear:hover {
+  background: var(--rich-pink);
+  color: var(--white);
+
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* ==========================================
+   RESULTS INFO
+   ========================================== */
+
+.question-results-info {
+  width: 100%;
+  max-width: 88rem;
+
+  margin: 1.25rem auto 1.4rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.84rem;
+
+  text-align: left;
+}
+
+/* ==========================================
+   GRID
+   ========================================== */
+
+.question-center-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 1.5rem;
+
+  align-items: stretch;
+}
+/* ==========================================
+   QUESTION CARD
+   ========================================== */
+
+.question-card {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  isolation: isolate;
+
+  border: 1px solid rgba(242, 139, 182, 0.3);
+  border-radius: 18px;
+
+  background: var(--white);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--rich-pink);
+
+  box-shadow:
+    0 14px 30px rgba(242, 139, 182, 0.16);
+}
+
+
+/* ==========================================
+   BACKGROUND IMAGE
+   ========================================== */
+
+.question-card-background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.question-card:hover .question-card-background {
+  transform: scale(1.04);
+}
+
+
+/* ==========================================
+   NORMAL IMAGE TINT
+   ========================================== */
+
+.question-card-image-tint {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.02) 10%,
+      rgba(0, 0, 0, 0.08) 45%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+
+  pointer-events: none;
+
+  transition:
+    background 0.35s ease;
+}
+
+
+/* ==========================================
+   HOVER OVERLAY
+   ========================================== */
+
+.question-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    rgba(0, 0, 0, 0);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+.question-card:hover::before {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.68)
+    );
+
+  opacity: 1;
+}
+
+
+/* ==========================================
+   QUESTION
+   ========================================== */
+
+.question-card-question-wrap {
+  position: absolute;
+
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.6rem;
+
+  z-index: 3;
+
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s ease,
+    visibility 0.25s ease;
+}
+
+.question-card:hover .question-card-question-wrap {
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-12px);
+
+  pointer-events: none;
+}
+
+.question-card-question {
+  max-width: 92%;
+
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: 1.15rem;
+  font-weight: 800;
+
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+
+  text-align: left;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==========================================
+   HOVER CONTENT
+   ========================================== */
+
+.question-card-hover {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  padding:
+    1.5rem 1.5rem 1.6rem;
+
+  background: transparent;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.35s ease,
+    visibility 0.3s ease;
+}
+
+.question-card:hover .question-card-hover {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+/* ==========================================
+   HOVER CONTENT INNER
+   ========================================== */
+
+.question-card-hover-inner {
+  width: 100%;
+  max-width: 310px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 1rem;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   DESCRIPTION
+   ========================================== */
+
+.question-card-description {
+  width: 100%;
+
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  line-height: 1.6;
+
+  text-align: center;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.5);
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   MORE INFO BUTTON
+   ========================================== */
+
+.question-more-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.45rem;
+
+  padding:
+    0.6rem 1.2rem;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 9999px;
+
+  background: var(--white);
+
+  color: var(--black);
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.question-more-btn:hover {
+  background: var(--rich-pink);
+
+  border-color: var(--rich-pink);
+
+  color: var(--white);
+
+  transform: translateY(-2px);
+}
+
+.question-more-arrow {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.question-more-btn:hover .question-more-arrow {
+  transform: translateX(4px);
+}
+
+[dir="rtl"]
+.question-more-btn:hover
+.question-more-arrow {
+  transform: translateX(-4px);
+}
+
+
+/* ==========================================
+   LOAD MORE
+   ========================================== */
+
+.question-load-more-wrapper {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 2.75rem;
+}
+
+.question-load-more-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  min-height: 44px;
+
+  padding:
+    0.7rem 1.5rem;
+
+  border:
+    1px solid rgba(242, 139, 182, 0.45);
+
+  border-radius: 9999px;
+
+  background:
+    rgba(242, 139, 182, 0.08);
+
+  color: var(--black);
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px rgba(242, 139, 182, 0.08);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.question-load-more-btn:hover {
+  background: var(--rich-pink);
+
+  border-color: var(--rich-pink);
+
+  color: var(--white);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(242, 139, 182, 0.18);
+}
+
+.question-load-more-arrow {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.question-load-more-btn:hover
+.question-load-more-arrow {
+  transform: translateX(4px);
+}
+
+[dir="rtl"]
+.question-load-more-btn:hover
+.question-load-more-arrow {
+  transform: translateX(-4px);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 639px) {
+
+  .question-card {
+    height: 320px;
+
+    border-radius: 17px;
+  }
+
+  .question-card-question-wrap {
+    left: 1.25rem;
+    right: 1.25rem;
+
+    bottom: 1.4rem;
+  }
+
+  .question-card-question {
+    max-width: 100%;
+
+    font-size: 1.08rem;
+
+    line-height: 1.45;
+  }
+
+  .question-card-hover {
+    padding:
+      1.25rem 1.25rem 1.4rem;
+  }
+
+  .question-card-hover-inner {
+    max-width: 100%;
+
+    gap: 0.9rem;
+  }
+
+  .question-card-description {
+    font-size: 0.88rem;
+
+    -webkit-line-clamp: 4;
+  }
+
+  .question-load-more-wrapper {
+    margin-top: 2.5rem;
+  }
+
+  .question-load-more-btn {
+    min-height: 44px;
+
+    padding:
+      0.7rem 1.25rem;
+
+    font-size: 0.84rem;
+  }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .question-card,
+  .question-card-background,
+  .question-card-image-tint,
+  .question-card::before,
+  .question-card-hover,
+  .question-card-question-wrap,
+  .question-more-btn,
+  .question-load-more-btn {
+    transition: none;
+  }
+
+  .question-card:hover {
+    transform: none;
+  }
+
+  .question-card:hover
+  .question-card-background {
+    transform: none;
+  }
+}

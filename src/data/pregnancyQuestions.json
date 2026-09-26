@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "slug": "early-signs-of-pregnancy",
+    "category": "Early Pregnancy",
+    "question": "What are the early signs of pregnancy?",
+    "description": "Learn about common early pregnancy symptoms, when they may appear, and when it is appropriate to take a pregnancy test.",
+    "image": "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 2,
+    "slug": "pregnancy-due-date",
+    "category": "Pregnancy",
+    "question": "How is my pregnancy due date calculated?",
+    "description": "Understand how an estimated due date is calculated using the first day of your last menstrual period.",
+    "image": "https://images.unsplash.com/photo-1530041539828-114de669390e?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 3,
+    "slug": "prenatal-visits",
+    "category": "Prenatal Care",
+    "question": "When should I start prenatal visits?",
+    "description": "Find out when prenatal care usually begins and what you can expect during your early pregnancy appointments.",
+    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 4,
+    "slug": "pregnancy-nutrition",
+    "category": "Nutrition",
+    "question": "What should I eat during pregnancy?",
+    "description": "Explore practical nutrition guidance and important nutrients that support a healthy pregnancy.",
+    "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 5,
+    "slug": "fertile-window",
+    "category": "Fertility",
+    "question": "How can I identify my fertile window?",
+    "description": "Learn how the menstrual cycle and ovulation can help you understand your most fertile days.",
+    "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 6,
+    "slug": "newborn-care",
+    "category": "Newborn Care",
+    "question": "What should I know about basic newborn care?",
+    "description": "Learn about essential newborn care, feeding, sleep, hygiene, and signs that may require medical attention.",
+    "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 7,
+    "slug": "postpartum-changes",
+    "category": "Postpartum",
+    "question": "What changes can I expect after giving birth?",
+    "description": "Understand common physical and emotional changes during the postpartum recovery period.",
+    "image": "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 8,
+    "slug": "when-to-see-doctor",
+    "category": "Medical Care",
+    "question": "When should I contact a doctor during pregnancy?",
+    "description": "Learn about symptoms and situations during pregnancy that may require prompt medical evaluation.",
+    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&auto=format&fit=crop&q=80"
+  }
+]

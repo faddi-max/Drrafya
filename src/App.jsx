@@ -39,27 +39,95 @@ export default function App() {
 
       <main className="flex-1">
         <Routes>
-          {/* Home */}
+
+          {/* =========================
+              HOME
+          ========================= */}
           <Route path="/" element={<Home />} />
 
-          {/* Main Pages */}
+          {/* =========================
+              MAIN PAGES
+          ========================= */}
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blogs/:slug" element={<BlogsbyCategories />} />
-          <Route path="/blog/:slug" element={<SingleBlogPost />} />
+          <Route
+            path="/blogs/:slug"
+            element={<BlogsbyCategories />}
+          />
+          <Route
+            path="/blog/:slug"
+            element={<SingleBlogPost />}
+          />
 
           {/* Resources */}
-          <Route path="/resources" element={<Resources />} />
+          <Route
+            path="/resources"
+            element={<Resources />}
+          />
 
-          <Route path="/baby-names" element={<BabyNames />} />
+          {/* Baby Names */}
+          <Route
+            path="/baby-names"
+            element={<BabyNames />}
+          />
 
+          {/* =========================
+              PREGNANCY QUESTION CENTER
+          ========================= */}
           <Route
             path="/pregnancyquestionscenter"
             element={<PregnancyQuestionsCenter />}
           />
 
-          <Route path="/journey/:id" element={<JourneyDetail />} />
+          {/* Question Center Details */}
+          <Route
+            path="/pregnancyquestionscenter/early-signs-of-pregnancy"
+            element={<PregnancyQuestionsCenter />}
+          />
 
-          {/* Services & Resources */}
+          <Route
+            path="/pregnancyquestionscenter/pregnancy-due-date"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          <Route
+            path="/pregnancyquestionscenter/prenatal-visits"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          <Route
+            path="/pregnancyquestionscenter/pregnancy-nutrition"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          <Route
+            path="/pregnancyquestionscenter/fertile-window"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          <Route
+            path="/pregnancyquestionscenter/newborn-care"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          <Route
+            path="/pregnancyquestionscenter/postpartum-changes"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          <Route
+            path="/pregnancyquestionscenter/when-to-see-doctor"
+            element={<PregnancyQuestionsCenter />}
+          />
+
+          {/* Journey */}
+          <Route
+            path="/journey/:id"
+            element={<JourneyDetail />}
+          />
+
+          {/* =========================
+              SERVICES & RESOURCES
+          ========================= */}
           <Route
             path="/free-live-helpline"
             element={<FreeHelpline />}
@@ -85,28 +153,52 @@ export default function App() {
             element={<PregnancyResources />}
           />
 
-          {/* Baby Names Redirects */}
+          {/* =========================
+              BABY NAME REDIRECTS
+          ========================= */}
           <Route
             path="/babyNames"
-            element={<Navigate to="/baby-names" replace />}
+            element={
+              <Navigate
+                to="/baby-names"
+                replace
+              />
+            }
           />
 
           <Route
             path="/babyname"
-            element={<Navigate to="/baby-names" replace />}
+            element={
+              <Navigate
+                to="/baby-names"
+                replace
+              />
+            }
           />
 
           <Route
             path="/baby-name"
-            element={<Navigate to="/baby-names" replace />}
+            element={
+              <Navigate
+                to="/baby-names"
+                replace
+              />
+            }
           />
 
           <Route
             path="/tools/baby-names"
-            element={<Navigate to="/baby-names" replace />}
+            element={
+              <Navigate
+                to="/baby-names"
+                replace
+              />
+            }
           />
 
-          {/* General Pages */}
+          {/* =========================
+              GENERAL PAGES
+          ========================= */}
           <Route
             path="/contact-us"
             element={<ContactusPage />}
@@ -137,7 +229,9 @@ export default function App() {
             element={<AboutUsPage />}
           />
 
-          {/* Tools */}
+          {/* =========================
+              TOOLS
+          ========================= */}
           <Route
             path="/ovulation-calculator"
             element={<Ovulationcalculator />}
@@ -150,7 +244,9 @@ export default function App() {
 
           <Route
             path="/pregnancy-weight-gain-calculator"
-            element={<PregnancyWeighgainercalculator />}
+            element={
+              <PregnancyWeighgainercalculator />
+            }
           />
 
           <Route
@@ -173,13 +269,17 @@ export default function App() {
             element={<Birthchartcalculator />}
           />
 
-          {/* Admin / Utility */}
+          {/* =========================
+              ADMIN / UTILITY
+          ========================= */}
           <Route
             path="/siteextractor"
             element={<SiteScraper />}
           />
 
-          {/* 404 */}
+          {/* =========================
+              404
+          ========================= */}
           <Route
             path="*"
             element={
@@ -188,6 +288,7 @@ export default function App() {
               </div>
             }
           />
+
         </Routes>
       </main>
 
