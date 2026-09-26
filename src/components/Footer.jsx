@@ -42,19 +42,42 @@ const socials = [
 ];
 
 const lifecycleLinks = [
-  { label: "Home", href: "#preconception" },
-  { label: "IUI Treatment", href: "#pregnancy" },
-  { label: "NICU Services", href: "#delivery" },
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "IUI Treatment",
+    href: "#pregnancy",
+  },
+  {
+    label: "NICU Services",
+    href: "#delivery",
+  },
+  {
+    label: "Pregnancy Questions Center",
+    href: "/pregnancyquestionscenter",
+  },
 ];
 
 const resourceLinks = [
-  { label: "Refund Policy", href: "/refundpolicy" },
-  { label: "Privacy Policy", href: "/privacypolcy" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  {
+    label: "Refund Policy",
+    href: "/refundpolicy",
+  },
+  {
+    label: "Privacy Policy",
+    href: "/privacypolicy",
+  },
+  {
+    label: "Terms & Conditions",
+    href: "/terms-and-conditions",
+  },
 ];
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
+
   const [activeSocial, setActiveSocial] = useState(null);
 
   const isRTL =
@@ -66,14 +89,24 @@ export default function Footer() {
       className="modern-footer"
       dir={isRTL ? "rtl" : "ltr"}
     >
-      {/* Background Ambient Glow */}
+      {/* ==========================================
+          BACKGROUND AMBIENT GLOW
+          ========================================== */}
+
       <div className="footer-ambient-bg" />
 
       <div className="footer-inner">
-        {/* MAIN BENTO GRID CONTAINERS */}
+
+        {/* ==========================================
+            MAIN BENTO GRID
+            ========================================== */}
+
         <div className="bento-container">
 
-          {/* Bento Box 1: Brand Header */}
+          {/* ==========================================
+              BENTO BOX 1: BRAND
+              ========================================== */}
+
           <div className="bento-box">
             <div>
               <img
@@ -89,40 +122,63 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="socials-row">
-              {socials.map(({ key, Icon, label, href }) => {
-                const isActive = activeSocial === key;
+            {/* SOCIAL LINKS */}
 
-                return (
-                  <motion.a
-                    key={key}
-                    href={href}
-                    aria-label={label}
-                    onMouseEnter={() => setActiveSocial(key)}
-                    onMouseLeave={() => setActiveSocial(null)}
-                    whileHover={{ scale: 1.08 }}
-                    whileTap={{ scale: 0.92 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 22,
-                    }}
-                    className="social-pill"
-                    style={{
-                      backgroundColor: isActive
-                        ? "var(--rich-pink)"
-                        : undefined,
-                    }}
-                  >
-                    <Icon size={18} />
-                  </motion.a>
-                );
-              })}
+            <div className="socials-row">
+              {socials.map(
+                ({
+                  key,
+                  Icon,
+                  label,
+                  href,
+                }) => {
+                  const isActive =
+                    activeSocial === key;
+
+                  return (
+                    <motion.a
+                      key={key}
+                      href={href}
+                      aria-label={label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onMouseEnter={() =>
+                        setActiveSocial(key)
+                      }
+                      onMouseLeave={() =>
+                        setActiveSocial(null)
+                      }
+                      whileHover={{
+                        scale: 1.08,
+                      }}
+                      whileTap={{
+                        scale: 0.92,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 22,
+                      }}
+                      className="social-pill"
+                      style={{
+                        backgroundColor:
+                          isActive
+                            ? "var(--rich-pink)"
+                            : undefined,
+                      }}
+                    >
+                      <Icon size={18} />
+                    </motion.a>
+                  );
+                }
+              )}
             </div>
           </div>
 
-          {/* Bento Box 2: Lifecycle Hubs */}
+          {/* ==========================================
+              BENTO BOX 2: QUICK LINKS
+              ========================================== */}
+
           <div className="bento-box">
             <div>
               <p className="bento-title">
@@ -130,21 +186,26 @@ export default function Footer() {
               </p>
 
               <ul className="bento-nav-list">
-                {lifecycleLinks.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      className="nav-item-link"
-                      href={item.href}
-                    >
-                      {t(item.label)}
-                    </a>
-                  </li>
-                ))}
+                {lifecycleLinks.map(
+                  (item) => (
+                    <li key={item.label}>
+                      <a
+                        className="nav-item-link"
+                        href={item.href}
+                      >
+                        {t(item.label)}
+                      </a>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
 
-          {/* Bento Box 3: Resources */}
+          {/* ==========================================
+              BENTO BOX 3: POLICIES
+              ========================================== */}
+
           <div className="bento-box">
             <div>
               <p className="bento-title">
@@ -152,21 +213,26 @@ export default function Footer() {
               </p>
 
               <ul className="bento-nav-list">
-                {resourceLinks.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      className="nav-item-link"
-                      href={item.href}
-                    >
-                      {t(item.label)}
-                    </a>
-                  </li>
-                ))}
+                {resourceLinks.map(
+                  (item) => (
+                    <li key={item.label}>
+                      <a
+                        className="nav-item-link"
+                        href={item.href}
+                      >
+                        {t(item.label)}
+                      </a>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
 
-          {/* Bento Box 4: Direct Consultation */}
+          {/* ==========================================
+              BENTO BOX 4: CONSULTATION
+              ========================================== */}
+
           <div className="bento-box">
             <div>
               <p className="bento-title">
@@ -174,6 +240,9 @@ export default function Footer() {
               </p>
 
               <div className="contact-stack">
+
+                {/* PHONE */}
+
                 <div className="contact-row">
                   <div className="contact-icon-wrapper">
                     <Phone size={18} />
@@ -186,6 +255,8 @@ export default function Footer() {
                     +92 3217183160
                   </a>
                 </div>
+
+                {/* EMAIL */}
 
                 <div className="contact-row">
                   <div className="contact-icon-wrapper">
@@ -200,6 +271,8 @@ export default function Footer() {
                   </a>
                 </div>
 
+                {/* LOCATION */}
+
                 <div className="contact-row">
                   <div className="contact-icon-wrapper">
                     <MapPin size={18} />
@@ -211,29 +284,42 @@ export default function Footer() {
                     )}
                   </span>
                 </div>
+
               </div>
             </div>
+
+            {/* ONLINE CONSULTATION */}
 
             <a
               id="book"
               href="#book"
               className="btn-cta-gold"
             >
-              <span>{t("Online Consultation")}</span>
+              <span>
+                {t("Online Consultation")}
+              </span>
+
               <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
 
-        {/* GIANT EDITORIAL WATERMARK */}
+        {/* ==========================================
+            GIANT EDITORIAL WATERMARK
+            ========================================== */}
+
         <div className="brand-watermark-container">
           <p className="brand-watermark-text">
             {t("DR. RAFIYA ZAHIR")}
           </p>
         </div>
 
-        {/* FOOTER BAR / LEGAL */}
+        {/* ==========================================
+            FOOTER BAR
+            ========================================== */}
+
         <div className="footer-bar">
+
           <p>
             © {new Date().getFullYear()}{" "}
             {t("Dr. Rafiya Zahir")}.{" "}
@@ -241,6 +327,7 @@ export default function Footer() {
           </p>
 
           <div className="legal-links">
+
             <a
               href="/privacypolicy"
               className="legal-link"
@@ -249,11 +336,12 @@ export default function Footer() {
             </a>
 
             <a
-              href="#terms"
+              href="/terms-and-conditions"
               className="legal-link"
             >
               {t("Terms & Conditions")}
             </a>
+
           </div>
         </div>
       </div>
