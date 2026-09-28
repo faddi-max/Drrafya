@@ -1,0 +1,1051 @@
+.guides-page {
+  width: 100%;
+  background: var(--white);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.guides-section {
+  padding: 4rem 1.5rem 6rem;
+  background-color: var(--white);
+}
+
+.guides-container {
+  max-width: 88rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.guides-header {
+  max-width: 680px;
+  margin: 0 auto 3.5rem auto;
+
+  text-align: center;
+}
+
+.guides-tag {
+  display: inline-block;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  color: var(--white);
+
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  background-color: var(--rich-pink);
+
+  padding: 0.4rem 1.1rem;
+
+  border-radius: 9999px;
+
+  margin-bottom: 0.85rem;
+}
+
+.guides-title {
+  margin: 0;
+
+  color: var(--black);
+
+  font-size: 2.5rem;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+}
+
+.guides-subtitle {
+  margin: 0.85rem auto 0;
+
+  max-width: 650px;
+
+  color: var(--text-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.guides-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      1,
+      minmax(0, 1fr)
+    );
+
+  gap: 1.5rem;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.guide-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--white);
+
+  border: 1px solid var(--card-border);
+
+  border-radius: 22px;
+
+  box-shadow: var(--card-shadow);
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.16,
+        1,
+        0.3,
+        1
+      ),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--rich-pink);
+
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.guide-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #f7f7f7;
+}
+
+.guide-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s
+      cubic-bezier(
+        0.16,
+        1,
+        0.3,
+        1
+      ),
+    filter 0.4s ease;
+}
+
+.guide-card:hover .guide-image {
+  transform: scale(1.055);
+
+  filter: saturate(1.04);
+}
+
+/* =========================
+   IMAGE BADGE
+========================= */
+
+.guide-image-badge {
+  position: absolute;
+
+  top: 1rem;
+  left: 1rem;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.42rem 0.8rem;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.7);
+
+  border-radius: 9999px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  color: var(--black);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.guide-card:hover .guide-image-badge {
+  background: var(--rich-pink);
+
+  color: var(--white);
+
+  border-color: var(--rich-pink);
+}
+
+[dir="rtl"] .guide-image-badge {
+  left: auto;
+  right: 1rem;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.guide-card-content {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  padding:
+    1.65rem
+    1.5rem
+    1.5rem;
+}
+
+.guide-card-title {
+  margin: 0;
+
+  color: var(--black);
+
+  font-size: 1.2rem;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.015em;
+}
+
+.guide-card-description {
+  margin: 0.7rem 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.guide-card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  margin-top: auto;
+
+  padding-top: 1.5rem;
+}
+
+.guide-download-action {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.45rem;
+
+  min-height: 38px;
+
+  padding:
+    0.52rem
+    0.95rem;
+
+  border: 0;
+
+  border-radius: 9999px;
+
+  background-color:
+    rgba(204, 163, 49, 0.12);
+
+  color: var(--black);
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 0.84rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.guide-download-action:hover {
+  background-color: var(--black);
+
+  color: var(--white);
+
+  transform: translateY(-2px);
+}
+
+.guide-download-icon {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.guide-arrow {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.guide-download-action:hover
+  .guide-download-icon {
+  transform: translateY(-1px);
+}
+
+.guide-download-action:hover
+  .guide-arrow {
+  transform: translateX(4px);
+
+  color: var(--rich-pink);
+}
+
+.guide-download-disabled,
+.guide-download-disabled:hover {
+  opacity: 0.55;
+
+  background-color:
+    rgba(204, 163, 49, 0.12);
+
+  color: var(--black);
+
+  transform: none;
+
+  cursor: not-allowed;
+}
+
+[dir="rtl"]
+  .guide-download-action:hover
+  .guide-arrow {
+  transform: translateX(-4px);
+}
+
+/* =========================
+   DOWNLOAD MODAL BACKDROP
+========================= */
+
+.guide-modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.25rem;
+
+  background:
+    rgba(10, 10, 10, 0.38);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  overflow-y: auto;
+}
+
+/* =========================
+   MODAL CARD
+========================= */
+
+.guide-download-modal {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 480px;
+
+  max-height:
+    calc(100vh - 2.5rem);
+
+  overflow-y: auto;
+
+  padding: 2rem;
+
+  background:
+    rgba(255, 255, 255, 0.98);
+
+  border: 1px solid
+    rgba(0, 0, 0, 0.08);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 35px 100px
+      rgba(0, 0, 0, 0.22),
+    0 8px 30px
+      rgba(0, 0, 0, 0.08);
+
+  scrollbar-width: thin;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.guide-modal-close {
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid
+    rgba(0, 0, 0, 0.08);
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  color: var(--black);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.guide-modal-close:hover {
+  background: var(--black);
+
+  color: var(--white);
+
+  transform: rotate(90deg);
+}
+
+[dir="rtl"] .guide-modal-close {
+  right: auto;
+  left: 1rem;
+}
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+.guide-modal-top {
+  text-align: center;
+
+  padding:
+    0.25rem
+    2rem
+    1.5rem;
+}
+
+.guide-modal-icon {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  margin:
+    0
+    auto
+    1rem;
+
+  border-radius: 50%;
+
+  background:
+    rgba(242, 139, 182, 0.1);
+
+  color: var(--rich-pink);
+
+  border: 1px solid
+    rgba(242, 139, 182, 0.18);
+}
+
+.guide-modal-kicker {
+  display: block;
+
+  margin-bottom: 0.45rem;
+
+  color: var(--rich-pink);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.guide-modal-title {
+  margin: 0;
+
+  color: var(--black);
+
+  font-size: 1.7rem;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+}
+
+.guide-modal-description {
+  max-width: 360px;
+
+  margin:
+    0.7rem
+    auto
+    0;
+
+  color: var(--text-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.55;
+}
+
+/* =========================
+   SELECTED GUIDE
+========================= */
+
+.guide-modal-selected {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.85rem;
+
+  margin-bottom: 1.35rem;
+
+  padding: 0.75rem;
+
+  border:
+    1px solid
+    rgba(0, 0, 0, 0.07);
+
+  border-radius: 14px;
+
+  background:
+    rgba(0, 0, 0, 0.025);
+}
+
+.guide-modal-selected-image {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+.guide-modal-selected div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.2rem;
+}
+
+.guide-modal-selected span {
+  color: var(--rich-pink);
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.guide-modal-selected strong {
+  color: var(--black);
+
+  font-size: 0.82rem;
+
+  line-height: 1.4;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.guide-download-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.guide-form-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.45rem;
+}
+
+.guide-form-field label {
+  color: var(--black);
+
+  font-size: 0.8rem;
+
+  font-weight: 750;
+}
+
+.guide-input-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  min-height: 50px;
+
+  padding:
+    0
+    0.9rem;
+
+  border:
+    1px solid
+    rgba(0, 0, 0, 0.11);
+
+  border-radius: 12px;
+
+  background: var(--white);
+
+  color: var(--text-muted);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.guide-input-wrapper:focus-within {
+  border-color: var(--rich-pink);
+
+  box-shadow:
+    0 0 0 3px
+      rgba(242, 139, 182, 0.1);
+}
+
+.guide-input-wrapper input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--black);
+
+  font-family: inherit;
+
+  font-size: 0.88rem;
+}
+
+.guide-input-wrapper input::placeholder {
+  color: #999;
+}
+
+/* =========================
+   MAIN DOWNLOAD BUTTON
+========================= */
+
+.guide-modal-download-btn {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  margin-top: 0.4rem;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.guide-modal-download-btn:hover:not(:disabled) {
+  background: var(--rich-pink);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px
+      rgba(242, 139, 182, 0.2);
+}
+
+.guide-modal-download-btn:disabled {
+  opacity: 0.7;
+
+  cursor: wait;
+}
+
+/* =========================
+   SPINNER
+========================= */
+
+.guide-download-spinner {
+  width: 17px;
+  height: 17px;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-top-color: var(--white);
+
+  border-radius: 50%;
+
+  animation:
+    guide-spinner 0.7s
+    linear infinite;
+}
+
+@keyframes guide-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   SECURITY
+========================= */
+
+.guide-modal-security {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.4rem;
+
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+}
+
+.guide-modal-security svg {
+  color: #4f8a62;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 640px) {
+  .guides-title {
+    font-size: 3.25rem;
+  }
+
+  .guides-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 1.5rem;
+  }
+
+  .guide-card-content {
+    padding:
+      1.75rem
+      1.6rem
+      1.6rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+  .guides-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    gap: 1.6rem;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1280px) {
+  .guides-grid {
+    gap: 1.75rem;
+  }
+
+  .guide-card-content {
+    padding:
+      1.8rem
+      1.7rem
+      1.7rem;
+  }
+
+  .guide-card-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 639px) {
+  .guides-section {
+    padding:
+      3.5rem
+      1rem
+      5rem;
+  }
+
+  .guides-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .guides-header {
+    margin-bottom: 3rem;
+  }
+
+  .guides-title {
+    font-size: 2.25rem;
+  }
+
+  .guides-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .guide-card {
+    border-radius: 20px;
+  }
+
+  .guide-image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .guide-card-content {
+    padding:
+      1.5rem
+      1.35rem
+      1.35rem;
+  }
+
+  .guide-card-title {
+    font-size: 1.12rem;
+  }
+
+  .guide-card-description {
+    font-size: 0.88rem;
+  }
+
+  .guide-card-footer {
+    padding-top: 1.25rem;
+  }
+
+  /* MODAL */
+
+  .guide-modal-backdrop {
+    padding: 1rem;
+  }
+
+  .guide-download-modal {
+    max-height:
+      calc(100vh - 2rem);
+
+    padding:
+      1.5rem
+      1.25rem
+      1.35rem;
+
+    border-radius: 20px;
+  }
+
+  .guide-modal-top {
+    padding:
+      0.2rem
+      1.5rem
+      1.25rem;
+  }
+
+  .guide-modal-icon {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 0.8rem;
+  }
+
+  .guide-modal-title {
+    font-size: 1.45rem;
+  }
+
+  .guide-modal-description {
+    font-size: 0.84rem;
+  }
+
+  .guide-modal-selected {
+    padding: 0.65rem;
+  }
+
+  .guide-modal-selected-image {
+    width: 52px;
+    height: 52px;
+  }
+
+  .guide-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  [dir="rtl"] .guide-modal-close {
+    right: auto;
+    left: 0.75rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-card,
+  .guide-image,
+  .guide-download-action,
+  .guide-modal-download-btn {
+    transition: none;
+  }
+
+  .guide-card:hover {
+    transform: none;
+  }
+
+  .guide-card:hover .guide-image {
+    transform: none;
+  }
+
+  .guide-download-spinner {
+    animation: none;
+  }
+}

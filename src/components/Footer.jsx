@@ -47,6 +47,10 @@ const lifecycleLinks = [
     href: "/",
   },
   {
+    label: "Guides",
+    href: "/guides",
+  },
+  {
     label: "IUI Treatment",
     href: "#pregnancy",
   },
@@ -319,7 +323,6 @@ export default function Footer() {
             ========================================== */}
 
         <div className="footer-bar">
-
           <p>
             © {new Date().getFullYear()}{" "}
             {t("Dr. Rafiya Zahir")}.{" "}
@@ -327,7 +330,6 @@ export default function Footer() {
           </p>
 
           <div className="legal-links">
-
             <a
               href="/privacypolicy"
               className="legal-link"
@@ -341,7 +343,6 @@ export default function Footer() {
             >
               {t("Terms & Conditions")}
             </a>
-
           </div>
         </div>
       </div>

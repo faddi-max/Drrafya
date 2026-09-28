@@ -29,6 +29,7 @@ import Refundpolicy from "./pages/Refundpolicy.jsx";
 import TermsandconditionsPage from "./pages/termsandconditions.jsx";
 import AboutUsPage from "./pages/AboutusPages.jsx";
 import Resources from "./pages/Resources.jsx";
+import Guides from "./pages/Guides.jsx";
 
 import "./i18n";
 
@@ -49,10 +50,12 @@ export default function App() {
               MAIN PAGES
           ========================= */}
           <Route path="/blogs" element={<Blogs />} />
+
           <Route
             path="/blogs/:slug"
             element={<BlogsbyCategories />}
           />
+
           <Route
             path="/blog/:slug"
             element={<SingleBlogPost />}
@@ -62,6 +65,12 @@ export default function App() {
           <Route
             path="/resources"
             element={<Resources />}
+          />
+
+          {/* Guides */}
+          <Route
+            path="/guides"
+            element={<Guides />}
           />
 
           {/* Baby Names */}
@@ -119,7 +128,9 @@ export default function App() {
             element={<PregnancyQuestionsCenter />}
           />
 
-          {/* Journey */}
+          {/* =========================
+              JOURNEY
+          ========================= */}
           <Route
             path="/journey/:id"
             element={<JourneyDetail />}
