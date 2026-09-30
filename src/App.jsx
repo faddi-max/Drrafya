@@ -7,6 +7,7 @@ import Blogs from "./components/Blogs";
 import BlogsbyCategories from "./components/BlogsbyCategories.jsx";
 import BabyNames from "./components/baby-names";
 import PregnancyQuestionsCenter from "./components/PregnancyQuestionsCenter";
+import QuestionDetail from "./components/QuestionDetail";
 import JourneyDetail from "./components/JourneyDetail";
 import PregnancyDueDateCalculatorPage from "./components/PregnancyDueDateCalendar";
 import FreeHelpline from "./components/FreeLiveHelpline";
@@ -35,21 +36,30 @@ import "./i18n";
 
 export default function App() {
   return (
-    <div id="top" className="min-h-screen bg-white flex flex-col">
+    <div
+      id="top"
+      className="min-h-screen bg-white flex flex-col"
+    >
       <Navbar />
 
       <main className="flex-1">
         <Routes>
-
           {/* =========================
               HOME
           ========================= */}
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home />}
+          />
 
           {/* =========================
               MAIN PAGES
           ========================= */}
-          <Route path="/blogs" element={<Blogs />} />
+
+          <Route
+            path="/blogs"
+            element={<Blogs />}
+          />
 
           <Route
             path="/blogs/:slug"
@@ -61,19 +71,28 @@ export default function App() {
             element={<SingleBlogPost />}
           />
 
-          {/* Resources */}
+          {/* =========================
+              RESOURCES
+          ========================= */}
+
           <Route
             path="/resources"
             element={<Resources />}
           />
 
-          {/* Guides */}
+          {/* =========================
+              GUIDES
+          ========================= */}
+
           <Route
             path="/guides"
             element={<Guides />}
           />
 
-          {/* Baby Names */}
+          {/* =========================
+              BABY NAMES
+          ========================= */}
+
           <Route
             path="/baby-names"
             element={<BabyNames />}
@@ -82,55 +101,23 @@ export default function App() {
           {/* =========================
               PREGNANCY QUESTION CENTER
           ========================= */}
+
+          {/* Main Question Center */}
           <Route
             path="/pregnancyquestionscenter"
             element={<PregnancyQuestionsCenter />}
           />
 
-          {/* Question Center Details */}
+          {/* Single Question Page */}
           <Route
             path="/pregnancyquestionscenter/early-signs-of-pregnancy"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/pregnancy-due-date"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/prenatal-visits"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/pregnancy-nutrition"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/fertile-window"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/newborn-care"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/postpartum-changes"
-            element={<PregnancyQuestionsCenter />}
-          />
-
-          <Route
-            path="/pregnancyquestionscenter/when-to-see-doctor"
-            element={<PregnancyQuestionsCenter />}
+            element={<QuestionDetail />}
           />
 
           {/* =========================
               JOURNEY
           ========================= */}
+
           <Route
             path="/journey/:id"
             element={<JourneyDetail />}
@@ -139,6 +126,7 @@ export default function App() {
           {/* =========================
               SERVICES & RESOURCES
           ========================= */}
+
           <Route
             path="/free-live-helpline"
             element={<FreeHelpline />}
@@ -167,6 +155,7 @@ export default function App() {
           {/* =========================
               BABY NAME REDIRECTS
           ========================= */}
+
           <Route
             path="/babyNames"
             element={
@@ -210,6 +199,7 @@ export default function App() {
           {/* =========================
               GENERAL PAGES
           ========================= */}
+
           <Route
             path="/contact-us"
             element={<ContactusPage />}
@@ -243,6 +233,7 @@ export default function App() {
           {/* =========================
               TOOLS
           ========================= */}
+
           <Route
             path="/ovulation-calculator"
             element={<Ovulationcalculator />}
@@ -283,6 +274,7 @@ export default function App() {
           {/* =========================
               ADMIN / UTILITY
           ========================= */}
+
           <Route
             path="/siteextractor"
             element={<SiteScraper />}
@@ -291,6 +283,7 @@ export default function App() {
           {/* =========================
               404
           ========================= */}
+
           <Route
             path="*"
             element={
@@ -299,7 +292,6 @@ export default function App() {
               </div>
             }
           />
-
         </Routes>
       </main>
 
