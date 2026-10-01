@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { Play, CheckCircle2, Sparkles } from "lucide-react";
@@ -8,12 +9,12 @@ const ease = [0.16, 1, 0.3, 1];
 
 const points = [
   {
-    title: "Evidence Based",
-    desc: "Vetted against global medical standards.",
+    title: "Evidence-Based",
+    desc: "Medical information grounded in established clinical knowledge and trusted sources.",
   },
   {
-    title: "Culturally Attuned",
-    desc: "Tailored to local dietary and family dynamics.",
+    title: "Personally Explained",
+    desc: "Complex health topics explained in clear, practical language.",
   },
 ];
 
@@ -48,7 +49,7 @@ export default function Approach() {
               <div className="media-viewport">
                 <img
                   src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1400&auto=format&fit=crop"
-                  alt={t("Women Healthcare")}
+                  alt={t("Women's Healthcare")}
                 />
 
                 <div className="media-dark-overlay" />
@@ -135,20 +136,16 @@ export default function Approach() {
           <div>
             <div className="header-pill">
               <Sparkles size={14} />
-              {t("Beyond Medicine")}
+              {t("Thoughtful Care")}
             </div>
 
             <h2 className="header-title">
-              {t("A")}{" "}
-              <span className="title-accent">
-                {t("Human-Centered")}
-              </span>{" "}
-              {t("Approach")}
+              {t("Women's Health Deserves More Than a Quick Answer")}
             </h2>
 
             <p className="header-description">
               {t(
-                "In Pakistan, women’s health issues are often ignored. We provide holistic care combining medical expertise with emotional wellness."
+                "Your health is personal. Dr. Rafia's approach combines medical expertise with clear explanations, thoughtful guidance and care that respects every woman's individual journey."
               )}
             </p>
 

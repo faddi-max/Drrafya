@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -17,25 +18,25 @@ export default function TrustSection() {
     {
       id: 1,
       icon: <FileCheck className="trust-icon" size={36} />,
-      title: t("Accurate"),
+      title: t("Evidence-Based"),
       description: t(
-        "Fact-checked with the latest science-backed research"
+        "Health information is developed from established medical knowledge and reviewed with appropriate clinical standards."
       ),
     },
     {
       id: 2,
       icon: <Stethoscope className="trust-icon" size={36} />,
-      title: t("Trustworthy"),
+      title: t("Expert-Led"),
       description: t(
-        "Edited and reviewed by doctors and parenting professionals"
+        "Medical content is led or reviewed by qualified healthcare professionals with clearly identified expertise."
       ),
     },
     {
       id: 3,
       icon: <Clock className="trust-icon" size={36} />,
-      title: t("Timely"),
+      title: t("Kept Up to Date"),
       description: t(
-        "Updated regularly to reflect the latest information"
+        "Important health information is reviewed and updated as medical guidance evolves."
       ),
     },
   ];
@@ -48,10 +49,7 @@ export default function TrustSection() {
       <div className="trust-container">
         {/* Section Heading */}
         <h2 className="trust-title">
-          {t("Why You Can Trust")}{" "}
-          <span className="purple-accent">
-            {t("What to Expect")}
-          </span>
+          {t("Why Women Can Trust Dr. Rafia's Medical Guidance")}
         </h2>
 
         {/* Cards Grid */}
@@ -88,7 +86,7 @@ export default function TrustSection() {
         {/* Call To Action */}
         <div className="trust-cta">
           <h4 className="cta-title">
-            {t("Read About Our Content Standards")}
+            {t("Read Our Medical & Editorial Standards")}
           </h4>
 
           <motion.button
@@ -97,7 +95,7 @@ export default function TrustSection() {
             whileTap={{ scale: 0.96 }}
             onClick={() => navigate("/blogs")}
           >
-            {t("Read More")}
+            {t("Read Our Medical & Editorial Standards")}
           </motion.button>
         </div>
       </div>

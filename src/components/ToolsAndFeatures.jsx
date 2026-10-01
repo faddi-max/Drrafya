@@ -91,21 +91,21 @@ export const toolsData = [
   {
     id: "due-date",
     title: "Due Date Calculator",
-    description: "Calculate your estimated delivery date based on your last menstrual period.",
+    description: "Estimate your baby's expected due date and explore your pregnancy timeline.",
     Illustration: DueDateIcon,
     href: "/due-date-calculator",
   },
   {
     id: "ovulation",
     title: "Ovulation Calculator",
-    description: "Identify your peak fertile windows accurately to maximize your chances of conceiving.",
+    description: "Estimate your fertile window using your menstrual cycle information.",
     Illustration: OvulationIcon,
     href: "/ovulation-calculator",
   },
   {
     id: "conceptiondatecalculator",
     title: "Conception Date Calculator",
-    description: "Use our Conception Date Calculator to find out the most likely date you conceived your little bundle.",
+    description: "Explore an estimated conception date based on your pregnancy information.",
     Illustration: RegistryIcon,
     href: "/conception-date-calculator",
   },
@@ -170,12 +170,12 @@ export default function ToolsAndFeatures() {
           </span>
 
           <h2 className="tools-title">
-            {t("Tools & Features")}
+            {t("Helpful Tools for Your Health Journey")}
           </h2>
 
           <p className="tools-subtitle">
             {t(
-              "Essential calculators, smart trackers, and helpful tools designed to support your journey."
+              "Simple tools to help you understand your cycle, pregnancy dates and fertility journey. These tools are educational and do not replace medical advice."
             )}
           </p>
         </div>
@@ -220,7 +220,7 @@ export default function ToolsAndFeatures() {
 
         <div className="tools-explore-wrapper">
           <a href="/resources" className="tools-explore-btn">
-            <span>{t("Explore All Tools")}</span>
+            <span>{t("Explore All Health Tools")}</span>
             <ArrowRight size={18} />
           </a>
         </div>

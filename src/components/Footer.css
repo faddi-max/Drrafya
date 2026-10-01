@@ -1,5 +1,6 @@
 /* ==========================================
    ULTRA-MODERN EDITORIAL BENTO FOOTER
+   RESPONSIVE VERSION
    ========================================== */
 
 :root {
@@ -7,304 +8,956 @@
   --card-surface: rgba(255, 255, 255, 0.025);
   --card-border: rgba(255, 255, 255, 0.07);
   --card-border-hover: rgba(236, 72, 153, 0.35);
+
   --rich-pink: #ec4899;
   --liquid-gold: #f59e0b;
+
   --text-primary: #ffffff;
   --text-muted: #94a3b8;
 }
 
+/* ==========================================
+   MAIN FOOTER
+   ========================================== */
+
 .modern-footer {
   position: relative;
+
+  width: 100%;
+
   background-color: var(--bg-dark);
   color: var(--text-primary);
+
   padding-top: 5rem;
   padding-bottom: 2rem;
+
   overflow: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
-/* Ambient Background Radial Glows */
+/* ==========================================
+   AMBIENT BACKGROUND
+   ========================================== */
+
 .footer-ambient-bg {
   position: absolute;
+
   top: 0;
   left: 50%;
+
   transform: translateX(-50%);
-  width: 800px;
+
+  width: min(800px, 100vw);
   height: 300px;
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(43, 86, 179, 0.05) 60%, transparent 100%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(236, 72, 153, 0.15) 0%,
+      rgba(43, 86, 179, 0.05) 60%,
+      transparent 100%
+    );
+
   filter: blur(100px);
+
   pointer-events: none;
 }
 
+/* ==========================================
+   FOOTER INNER
+   ========================================== */
+
 .footer-inner {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
   max-width: 88rem;
+
   margin-left: auto;
   margin-right: auto;
+
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  position: relative;
-  z-index: 10;
+
+  box-sizing: border-box;
 }
 
-/* Bento Grid System */
+/* ==========================================
+   BENTO GRID
+   ========================================== */
+
 .bento-container {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  grid-template-columns:
+    minmax(0, 1fr);
+
   gap: 1.25rem;
+
+  width: 100%;
 }
 
-@media (min-width: 768px) {
-  .bento-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+/* ==========================================
+   BENTO BOX
+   ========================================== */
 
-@media (min-width: 1024px) {
-  .bento-container {
-    grid-template-columns: 2.2fr 1.1fr 1.1fr 1.8fr;
-  }
-}
-
-/* Bento Glass Box */
 .bento-box {
+  min-width: 0;
+
   background: var(--card-surface);
+
   border: 1px solid var(--card-border);
+
   border-radius: 28px;
+
   padding: 2.25rem;
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .bento-box:hover {
   border-color: var(--card-border-hover);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 30px rgba(236, 72, 153, 0.1);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(236, 72, 153, 0.1);
+
   transform: translateY(-2px);
 }
 
-/* Brand Identity Block */
+/* ==========================================
+   BRAND IDENTITY
+   ========================================== */
+
 .brand-badge-group {
   display: flex;
+
   align-items: center;
+
   gap: 1rem;
+
+  min-width: 0;
 }
 
 .brand-icon-box {
-  height: 3.25rem;
   width: 3.25rem;
+  height: 3.25rem;
+
+  flex-shrink: 0;
+
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--rich-pink) 0%, #be185d 100%);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rich-pink) 0%,
+      #be185d 100%
+    );
+
   display: grid;
+
   place-items: center;
+
   font-weight: 800;
+
   font-size: 1.35rem;
+
   color: #ffffff;
-  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35);
+
+  box-shadow:
+    0 10px 25px rgba(236, 72, 153, 0.35);
 }
 
 .brand-name {
+  min-width: 0;
+
   font-size: 1.4rem;
+
   font-weight: 800;
+
   letter-spacing: -0.025em;
+
   margin: 0;
+
   color: #ffffff;
 }
 
 .brand-tagline {
-  font-size: 0.75rem;
-  color: var(--rich-pink);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 0.2rem;
   display: block;
+
+  margin-top: 0.2rem;
+
+  color: var(--rich-pink);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
 }
 
 .brand-bio-text {
   margin-top: 1.5rem;
+
   color: var(--text-muted);
+
   font-size: 0.925rem;
+
   line-height: 1.65;
+
   font-weight: 400;
 }
 
-/* Social Buttons Row */
+/* ==========================================
+   SOCIAL BUTTONS
+   ========================================== */
+
 .socials-row {
-  margin-top: 2rem;
   display: flex;
+
   align-items: center;
-  gap: 0.75rem;
+
   flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin-top: 2rem;
 }
 
 .social-pill {
-  height: 2.85rem;
   width: 2.85rem;
-  border-radius: 14px;
+  height: 2.85rem;
+
+  flex-shrink: 0;
+
   display: grid;
+
   place-items: center;
+
   border: 1px solid var(--card-border);
+
+  border-radius: 14px;
+
   background: rgba(255, 255, 255, 0.03);
+
   color: #ffffff;
+
   text-decoration: none;
+
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  touch-action: manipulation;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .social-pill:hover {
   border-color: var(--rich-pink);
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+
+  background: rgba(236, 72, 153, 0.06);
+
+  box-shadow:
+    0 0 20px rgba(236, 72, 153, 0.4);
+
+  transform: translateY(-2px);
 }
 
-/* Bento Header Typography */
+/* ==========================================
+   BENTO HEADER
+   ========================================== */
+
 .bento-title {
-  font-size: 0.725rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  margin: 0 0 1.5rem;
+
   color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.725rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.3;
+
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
 }
 
-/* Clean Navigation Lists */
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
 .bento-nav-list {
   list-style: none;
+
   padding: 0;
   margin: 0;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 0.9rem;
 }
 
 .nav-item-link {
-  color: var(--text-muted);
-  font-size: 0.925rem;
-  font-weight: 500;
-  text-decoration: none;
   display: inline-flex;
+
   align-items: center;
-  transition: all 0.25s ease;
+
+  min-height: 24px;
+
+  color: var(--text-muted);
+
+  font-size: 0.925rem;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .nav-item-link:hover {
   color: #ffffff;
+
   transform: translateX(6px);
 }
 
-/* Contact Details Block */
+[dir="rtl"] .nav-item-link:hover {
+  transform: translateX(-6px);
+}
+
+/* ==========================================
+   CONTACT DETAILS
+   ========================================== */
+
 .contact-stack {
   display: flex;
+
   flex-direction: column;
+
   gap: 1.1rem;
 }
 
 .contact-row {
   display: flex;
+
   align-items: flex-start;
+
   gap: 0.85rem;
+
+  min-width: 0;
+
   color: var(--text-muted);
+
   font-size: 0.9rem;
+
+  line-height: 1.55;
 }
 
 .contact-icon-wrapper {
-  color: var(--rich-pink);
-  margin-top: 0.1rem;
   flex-shrink: 0;
+
+  margin-top: 0.1rem;
+
+  color: var(--rich-pink);
 }
 
 .contact-anchor {
+  min-width: 0;
+
   color: var(--text-muted);
+
   text-decoration: none;
-  transition: color 0.2s ease;
+
+  overflow-wrap: anywhere;
+
+  transition:
+    color 0.2s ease;
 }
 
 .contact-anchor:hover {
   color: #ffffff;
 }
 
-/* Primary CTA Button */
+/* ==========================================
+   PRIMARY CTA
+   ========================================== */
+
 .btn-cta-gold {
-  margin-top: 1.75rem;
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 0.5rem;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--liquid-gold) 0%, #d97706 100%);
-  padding: 0.95rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #000000;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
-  transition: all 0.3s ease;
+
+  min-height: 46px;
+
+  margin-top: 1.75rem;
+
+  padding:
+    0.95rem
+    1.5rem;
+
   border: none;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--liquid-gold) 0%,
+      #d97706 100%
+    );
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 25px rgba(245, 158, 11, 0.25);
+
   cursor: pointer;
+
+  touch-action: manipulation;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
 }
 
 .btn-cta-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 32px rgba(245, 158, 11, 0.38);
+
+  box-shadow:
+    0 15px 32px rgba(245, 158, 11, 0.38);
+
   filter: brightness(1.08);
 }
 
-/* Editorial Brand Watermark Layer */
+/* ==========================================
+   EDITORIAL WATERMARK
+   ========================================== */
+
 .brand-watermark-container {
+  width: 100%;
+
   margin-top: 4.5rem;
+
   text-align: center;
+
   user-select: none;
+
   pointer-events: none;
+
+  overflow: hidden;
 }
 
 .footer-logo {
+  display: block;
+
   width: 65px;
+  max-width: 100%;
+
+  height: auto;
+
+  margin: 0 auto 0.75rem;
 }
 
 .brand-watermark-text {
-  font-size: clamp(2.8rem, 9.5vw, 7.8rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin: 0;
+
+  color: transparent;
+
+  font-size: clamp(
+    2.8rem,
+    9.5vw,
+    7.8rem
+  );
+
+  font-weight: 900;
+
   line-height: 0.85;
+
+  letter-spacing: -0.04em;
+
+  white-space: nowrap;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 }
 
-/* Bottom Bar */
+/* ==========================================
+   BOTTOM BAR
+   ========================================== */
+
 .footer-bar {
-  margin-top: 2rem;
-  border-top: 1px solid var(--card-border);
-  padding-top: 2rem;
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 1rem;
+
+  margin-top: 2rem;
+
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--card-border);
+
   color: rgba(255, 255, 255, 0.35);
+
   font-size: 0.85rem;
+
+  text-align: center;
 }
 
-@media (min-width: 640px) {
-  .footer-bar {
-    flex-direction: row;
-  }
+.footer-bar p {
+  margin: 0;
+
+  line-height: 1.5;
 }
+
+/* ==========================================
+   LEGAL LINKS
+   ========================================== */
 
 .legal-links {
   display: flex;
-  gap: 1.5rem;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem 1.5rem;
 }
 
 .legal-link {
   color: rgba(255, 255, 255, 0.35);
+
   text-decoration: none;
-  transition: color 0.2s ease;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease;
 }
 
 .legal-link:hover {
   color: #ffffff;
+}
+
+/* ==========================================
+   SMALL TABLET
+   ========================================== */
+
+@media (min-width: 640px) {
+  .modern-footer {
+    padding-top: 5.5rem;
+  }
+
+  .footer-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .bento-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .bento-box {
+    padding: 2rem;
+  }
+
+  .footer-bar {
+    flex-direction: row;
+
+    text-align: left;
+  }
+
+  .legal-links {
+    justify-content: flex-end;
+  }
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (min-width: 768px) {
+  .footer-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .bento-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+  }
+
+  .bento-box {
+    padding: 2.15rem;
+  }
+
+  .brand-bio-text {
+    max-width: 560px;
+  }
+}
+
+/* ==========================================
+   LARGE TABLET / SMALL DESKTOP
+   ========================================== */
+
+@media (min-width: 900px) {
+  .bento-container {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .bento-box:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* ==========================================
+   DESKTOP
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .modern-footer {
+    padding-top: 6rem;
+  }
+
+  .footer-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .bento-container {
+    grid-template-columns:
+      2.2fr
+      1.1fr
+      1.1fr
+      1.8fr;
+
+    gap: 1.25rem;
+  }
+
+  .bento-box:first-child {
+    grid-column: auto;
+  }
+
+  .bento-box {
+    padding: 2.25rem;
+  }
+
+  .brand-watermark-container {
+    margin-top: 5rem;
+  }
+}
+
+/* ==========================================
+   LARGE DESKTOP
+   ========================================== */
+
+@media (min-width: 1280px) {
+  .bento-container {
+    gap: 1.5rem;
+  }
+
+  .bento-box {
+    padding: 2.4rem;
+  }
+
+  .brand-watermark-container {
+    margin-top: 5.5rem;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 639px) {
+  .modern-footer {
+    padding-top: 3.5rem;
+
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .bento-container {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .bento-box {
+    padding: 1.5rem;
+
+    border-radius: 22px;
+  }
+
+  .brand-badge-group {
+    gap: 0.8rem;
+  }
+
+  .brand-icon-box {
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 15px;
+
+    font-size: 1.2rem;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  .brand-bio-text {
+    margin-top: 1.25rem;
+
+    font-size: 0.88rem;
+
+    line-height: 1.65;
+  }
+
+  .socials-row {
+    margin-top: 1.5rem;
+
+    gap: 0.6rem;
+  }
+
+  .social-pill {
+    width: 2.7rem;
+    height: 2.7rem;
+
+    border-radius: 13px;
+  }
+
+  .bento-title {
+    margin-bottom: 1.25rem;
+
+    font-size: 0.68rem;
+  }
+
+  .bento-nav-list {
+    gap: 0.75rem;
+  }
+
+  .nav-item-link {
+    font-size: 0.88rem;
+
+    min-height: 28px;
+  }
+
+  .contact-stack {
+    gap: 0.95rem;
+  }
+
+  .contact-row {
+    gap: 0.7rem;
+
+    font-size: 0.85rem;
+  }
+
+  .btn-cta-gold {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 1.5rem;
+
+    padding:
+      0.85rem
+      1.25rem;
+  }
+
+  .brand-watermark-container {
+    margin-top: 3.5rem;
+  }
+
+  .footer-logo {
+    width: 55px;
+
+    margin-bottom: 0.6rem;
+  }
+
+  .brand-watermark-text {
+    font-size: clamp(
+      2.35rem,
+      14vw,
+      4.5rem
+    );
+
+    line-height: 0.9;
+  }
+
+  .footer-bar {
+    margin-top: 1.5rem;
+
+    padding-top: 1.5rem;
+
+    gap: 0.85rem;
+
+    font-size: 0.76rem;
+  }
+
+  .legal-links {
+    gap: 0.65rem 1rem;
+  }
+}
+
+/* ==========================================
+   VERY SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 380px) {
+  .modern-footer {
+    padding-top: 3rem;
+  }
+
+  .footer-inner {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .bento-box {
+    padding: 1.25rem;
+
+    border-radius: 20px;
+  }
+
+  .brand-icon-box {
+    width: 2.75rem;
+    height: 2.75rem;
+
+    border-radius: 14px;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .brand-bio-text {
+    font-size: 0.84rem;
+  }
+
+  .social-pill {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .contact-row {
+    font-size: 0.82rem;
+  }
+
+  .brand-watermark-text {
+    font-size: 2.2rem;
+  }
+
+  .legal-links {
+    gap: 0.5rem 0.8rem;
+  }
+}
+
+/* ==========================================
+   RTL
+   ========================================== */
+
+[dir="rtl"] .contact-row {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-bar {
+  text-align: right;
+}
+
+[dir="rtl"] .legal-links {
+  justify-content: flex-start;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-box,
+  .social-pill,
+  .nav-item-link,
+  .btn-cta-gold {
+    transition: none;
+  }
+
+  .bento-box:hover,
+  .social-pill:hover,
+  .btn-cta-gold:hover {
+    transform: none;
+  }
 }

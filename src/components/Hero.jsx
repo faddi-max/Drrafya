@@ -1,32 +1,58 @@
+
 import { motion } from "framer-motion";
-import { Calendar, UserCheck, MapPin } from "lucide-react";
+import { HeartPulse, Baby, Dna } from "lucide-react";
 import heroImg from "../assets/hero.png";
 import "./Hero.css";
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const ease = [0.22, 1, 0.36, 1];
 
 export default function Hero() {
-
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section id="start" className="hero-section">
       {/* MAIN ROYAL BLUE CONTAINER */}
       <div className="hero-card">
-        
-        {/* Abstract Vector Line Overlay (Exact Reference Circles & Rounded Rectangles) */}
+
+        {/* Abstract Vector Line Overlay */}
         <div className="hero-vector-bg">
-          <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="520" y="-80" width="480" height="480" rx="160" stroke="white" strokeWidth="60" />
-            <rect x="700" y="120" width="550" height="550" rx="200" stroke="white" strokeWidth="60" />
-            <circle cx="180" cy="380" r="280" stroke="white" strokeWidth="60" />
+          <svg
+            viewBox="0 0 1200 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="520"
+              y="-80"
+              width="480"
+              height="480"
+              rx="160"
+              stroke="white"
+              strokeWidth="60"
+            />
+            <rect
+              x="700"
+              y="120"
+              width="550"
+              height="550"
+              rx="200"
+              stroke="white"
+              strokeWidth="60"
+            />
+            <circle
+              cx="180"
+              cy="380"
+              r="280"
+              stroke="white"
+              strokeWidth="60"
+            />
           </svg>
         </div>
 
         <div className="hero-grid">
-          
-          {/* LEFT: HEADLINE + DESCRIPTON + CTA */}
+
+          {/* LEFT: HEADLINE + DESCRIPTION + CTA */}
           <div className="hero-left-col">
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
@@ -34,9 +60,9 @@ export default function Hero() {
               transition={{ duration: 0.6, ease }}
               className="hero-title"
             >
-              {t("Dedicated to Long")} <br />
-              {t("Term Health and")} <br />
-              {t("Well-Being")}
+              {t(
+                "Expert Care for Every Stage of Your Women's Health Journey"
+              )}
             </motion.h1>
 
             <motion.p
@@ -45,7 +71,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1, ease }}
               className="hero-description"
             >
-              {t("At Carevia, we provide patient-focused medical care backed by experienced doctors, modern technology, and evidence-based practices.")}
+              {t(
+                "From periods and PCOS to pregnancy, fertility and infertility, Dr. Rafia Zahir provides trusted medical guidance and personalized care for women in Pakistan and around the world."
+              )}
             </motion.p>
 
             <motion.div
@@ -54,7 +82,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2, ease }}
             >
               <a href="#get-started" className="btn-get-started">
-                {t("Get Started Now")}
+                {t("Explore Women's Health")}
               </a>
             </motion.div>
           </div>
@@ -81,10 +109,20 @@ export default function Hero() {
             >
               <div className="avatar-pill">
                 <div className="avatar-group-images">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User" />
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User" />
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User" />
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                    alt="Patient"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                    alt="Patient"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80"
+                    alt="Patient"
+                  />
                 </div>
+
                 <span className="social-count">5.5k</span>
               </div>
 
@@ -97,7 +135,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* BOTTOM OVERLAPPING SEARCH BAR WIDGET */}
+      {/* BOTTOM OVERLAPPING SPECIALTY WIDGET */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -105,43 +143,61 @@ export default function Hero() {
         className="bottom-widget-container"
       >
         <div className="search-bar-card">
-          
-          {/* Field 1: Dates */}
+
+          {/* Field 1: Gynecologist */}
           <div className="field-group">
             <div className="field-icon-box">
-              <Calendar size={20} />
+              <HeartPulse size={20} />
             </div>
+
             <div className="field-text-box">
-              <span className="field-title-text">{t("Date")}</span>
-              <span className="field-main-text">{t("Aug 04, 2025")}</span>
+              <span className="field-title-text">
+                {t("Specialty")}
+              </span>
+
+              <span className="field-main-text">
+                {t("Gynecologist")}
+              </span>
             </div>
           </div>
 
-          {/* Field 2: Specialist */}
+          {/* Field 2: Obstetrician */}
           <div className="field-group">
             <div className="field-icon-box">
-              <UserCheck size={20} />
+              <Baby size={20} />
             </div>
+
             <div className="field-text-box">
-              <span className="field-title-text">{t("Specialist")}</span>
-              <span className="field-main-text">{t("Gynecologist")}</span>
+              <span className="field-title-text">
+                {t("Specialty")}
+              </span>
+
+              <span className="field-main-text">
+                {t("Obstetrician")}
+              </span>
             </div>
           </div>
 
-          {/* Field 3: Location */}
+          {/* Field 3: Fertility & Infertility Specialist */}
           <div className="field-group">
             <div className="field-icon-box">
-              <MapPin size={20} />
+              <Dna size={20} />
             </div>
+
             <div className="field-text-box">
-              <span className="field-title-text">{t("Location")}</span>
-              <span className="field-main-text">{t("Sialkot, Pakistan")}</span>
+              <span className="field-title-text">
+                {t("Specialty")}
+              </span>
+
+              <span className="field-main-text">
+                {t("Fertility & Infertility Specialist")}
+              </span>
             </div>
           </div>
 
-          {/* Button: Search Doctor */}
+          {/* Button */}
           <button className="btn-search-doctor">
-            {t("Search Doctor")}
+            {t("Consult Dr. Rafia")}
           </button>
 
         </div>

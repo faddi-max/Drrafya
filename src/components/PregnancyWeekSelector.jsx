@@ -1,5 +1,6 @@
+
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import "./PregnancyWeekSelector.css";
 import { useTranslation } from "react-i18next";
 
@@ -91,16 +92,19 @@ export default function PregnancyWeekSelector({ onSelectWeek }) {
             <span className="pw-badge-dot" />
 
             <p className="pw-badge-text">
-              {t("WEEK BY WEEK GUIDE")}
+              {t("PREGNANCY GUIDE")}
             </p>
           </div>
 
-          <h3 className="pw-title">
-            {t("Jump to Your")}{" "}
-            <span className="pw-title-accent">
-              {t("Week of Pregnancy")}
-            </span>
-          </h3>
+          <h2 className="pw-title">
+            {t("Your Pregnancy, Week by Week")}
+          </h2>
+
+          <p className="pw-description">
+            {t(
+              "Understand how your baby develops, what changes you may notice and what to discuss with your doctor at each stage of pregnancy."
+            )}
+          </p>
         </div>
 
         {/* CAROUSEL CONTROLS & TRACK */}
@@ -156,6 +160,21 @@ export default function PregnancyWeekSelector({ onSelectWeek }) {
           </button>
 
         </div>
+
+        {/* CTA */}
+        <div className="pw-cta-wrapper">
+          <a
+            href="/pregnancy/week-by-week/"
+            className="pw-cta-btn"
+          >
+            <span>
+              {t("Explore the Full Pregnancy Guide")}
+            </span>
+
+            <ArrowRight size={18} />
+          </a>
+        </div>
+
       </div>
     </section>
   );

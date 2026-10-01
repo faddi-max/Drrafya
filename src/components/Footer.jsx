@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -52,11 +53,11 @@ const lifecycleLinks = [
   },
   {
     label: "IUI Treatment",
-    href: "#pregnancy",
+    href: "/services",
   },
   {
     label: "NICU Services",
-    href: "#delivery",
+    href: "/services/nicu",
   },
   {
     label: "Pregnancy Questions Center",

@@ -1,3 +1,4 @@
+
 import Reveal from "./Reveal";
 import { Users, Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
 import "./CommunityCTA.css";
@@ -31,16 +32,13 @@ export default function CommunityCTA() {
 
             {/* Heading */}
             <h3 className="cm-title">
-              {t("Where Community Meets")}{" "}
-              <span className="cm-title-accent">
-                {t("Expertise")}
-              </span>
+              {t("A Community Where Women Can Ask, Share & Learn")}
             </h3>
 
             {/* Subtitle */}
             <p className="cm-description">
               {t(
-                "Join a dedicated space where women support women—guided by expert knowledge, real resources, and meaningful connection."
+                "Connect with other women, share experiences and find medically informed guidance from Dr. Rafia and verified experts."
               )}
             </p>
 
@@ -58,7 +56,7 @@ export default function CommunityCTA() {
 
               <div className="cm-feature-pill">
                 <ShieldCheck className="cm-feature-icon" size={16} />
-                <span>{t("Private Groups")}</span>
+                <span>{t("Private & Respectful")}</span>
               </div>
             </div>
 

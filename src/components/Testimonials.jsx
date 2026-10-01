@@ -119,7 +119,7 @@ export default function Testimonials() {
             </p>
 
             <h3 className="tm-title">
-              {t("What patients say")}
+              {t("Care That Women Remember")}
             </h3>
           </div>
         </Reveal>

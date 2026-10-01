@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
@@ -64,22 +65,22 @@ export default function TrendingBlogs() {
         <div className="blogs-header">
           <div>
             <span className="section-tag">
-              {t("Latest Medical Insights")}
+              {t("Medical Guides")}
             </span>
 
             <h2 className="blogs-title">
-              {t("Trending Healthcare Articles")}
+              {t("Women's Health, Explained Clearly")}
             </h2>
 
             <p className="blogs-subtitle">
               {t(
-                "Expertly curated reads on women's life stages, clinical advice, and wellness tips."
+                "Evidence-based guidance from Dr. Rafia Zahir and trusted specialists, helping women understand their health and make informed decisions."
               )}
             </p>
           </div>
 
           <a href="/blogs" className="btn-view-all">
-            <span>{t("Explore All Articles")}</span>
+            <span>{t("Explore All Medical Guides")}</span>
             <ArrowRight size={18} />
           </a>
         </div>

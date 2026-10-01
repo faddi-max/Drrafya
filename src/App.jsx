@@ -14,6 +14,7 @@ import FreeHelpline from "./components/FreeLiveHelpline";
 import OvulationCalendar from "./components/OvulationCalendar";
 import PregnancyQuiz from "./components/PregnancyQuiz";
 import PregnancyResources from "./components/PregnancyResources";
+
 import ContactusPage from "./pages/contactus.jsx";
 import Ovulationcalculator from "./tools/OvulationCalculator.jsx";
 import Duedatecalculator from "./tools/PregnancyCalculator.jsx";
@@ -23,6 +24,7 @@ import IVFDueDateCalculator from "./tools/IVFDueDateCalculator.jsx";
 import Chinesegenderpredictor from "./tools/Chinesegenderpredictor.jsx";
 import Birthchartcalculator from "./tools/Birthchartcalculator.jsx";
 import SingleBlogPost from "./components/SingleBlogPost.jsx";
+
 import Bookappointment from "./pages/bookappointmentform.jsx";
 import SiteScraper from "./components/SiteZipDownloader.jsx";
 import Privacypolcy from "./pages/Privacypolicy.jsx";
@@ -31,6 +33,13 @@ import TermsandconditionsPage from "./pages/termsandconditions.jsx";
 import AboutUsPage from "./pages/AboutusPages.jsx";
 import Resources from "./pages/Resources.jsx";
 import Guides from "./pages/Guides.jsx";
+
+/* =========================
+   SERVICES
+========================= */
+
+import Services from "./pages/Services.jsx";
+import NICUService from "./components/NICUService.jsx";
 
 import "./i18n";
 
@@ -44,9 +53,11 @@ export default function App() {
 
       <main className="flex-1">
         <Routes>
+
           {/* =========================
               HOME
           ========================= */}
+
           <Route
             path="/"
             element={<Home />}
@@ -69,6 +80,20 @@ export default function App() {
           <Route
             path="/blog/:slug"
             element={<SingleBlogPost />}
+          />
+
+          {/* =========================
+              SERVICES
+          ========================= */}
+
+          <Route
+            path="/services"
+            element={<Services />}
+          />
+
+          <Route
+            path="/services/nicu"
+            element={<NICUService />}
           />
 
           {/* =========================
@@ -102,13 +127,11 @@ export default function App() {
               PREGNANCY QUESTION CENTER
           ========================= */}
 
-          {/* Main Question Center */}
           <Route
             path="/pregnancyquestionscenter"
             element={<PregnancyQuestionsCenter />}
           />
 
-          {/* Single Question Page */}
           <Route
             path="/pregnancyquestionscenter/early-signs-of-pregnancy"
             element={<QuestionDetail />}
@@ -292,6 +315,7 @@ export default function App() {
               </div>
             }
           />
+
         </Routes>
       </main>
 

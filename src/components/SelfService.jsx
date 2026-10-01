@@ -1,3 +1,4 @@
+
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { CalendarDays, Zap, Activity, Search, Sparkles } from "lucide-react";
@@ -8,23 +9,23 @@ const ease = [0.22, 1, 0.36, 1];
 
 const tools = [
   {
-    title: "Due Date Calculator",
-    desc: "Calculate your estimated arrival date based on your LMP",
+    title: "Pregnancy Tools",
+    desc: "Due dates, pregnancy weeks and essential pregnancy resources.",
     icon: CalendarDays,
   },
   {
-    title: "Ovulation Finder",
-    desc: "Track your fertile window to maximize conception chances.",
+    title: "Fertility Tools",
+    desc: "Ovulation, fertile-window and fertility resources.",
     icon: Zap,
   },
   {
-    title: "Pregnancy BMI",
-    desc: "Monitor your healthy weight gain trends.",
+    title: "Medical Guides",
+    desc: "Clear explanations of common women's health questions.",
     icon: Activity,
   },
   {
-    title: "Symptom Checker",
-    desc: "Instant guidance on common pregnancy symptoms.",
+    title: "Health Resources",
+    desc: "Practical health information and resources to support your health journey.",
     icon: Search,
   },
 ];
@@ -118,7 +119,7 @@ export default function SelfService() {
                 transition={{ duration: 0.5, ease }}
                 className="ss-badge"
               >
-                {t("Utility & Tools")}
+                {t("Health Resources")}
               </motion.p>
 
               <motion.h3
@@ -132,7 +133,7 @@ export default function SelfService() {
                 }}
                 className="ss-title"
               >
-                {t("Self-Service Health Center")}
+                {t("Get Helpful Answers, Anytime")}
               </motion.h3>
 
               <motion.p
@@ -147,7 +148,7 @@ export default function SelfService() {
                 className="ss-subtitle"
               >
                 {t(
-                  "Quick, data-driven actions at your fingertips. From vaccination schedules to fertility trackers, manage your health with our verified digital tools."
+                  "Explore practical tools, guides and resources designed to help you understand your health before, during and after a consultation."
                 )}
               </motion.p>
 
@@ -215,7 +216,7 @@ export default function SelfService() {
               <div className="ss-calc-body">
                 <div className="ss-form-field">
                   <label className="ss-field-label">
-                    {t("First day of last period (LMP)")}
+                    {t("First day of last menstrual period")}
                   </label>
 
                   <input
@@ -260,13 +261,15 @@ export default function SelfService() {
                   className="ss-action-btn"
                   type="button"
                 >
-                  {t("Calculate Now")}
+                  {t("Calculate Due Date")}
                 </motion.button>
               </div>
 
               <div className="ss-calc-footer">
                 <p className="ss-disclaimer">
-                  {t("Medical Validation Required For Accuracy")}
+                  {t(
+                    "Educational estimate only. Your healthcare professional can provide personalized guidance."
+                  )}
                 </p>
 
                 {result && (

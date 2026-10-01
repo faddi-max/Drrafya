@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,39 +9,39 @@ import { useTranslation } from "react-i18next";
 const faqData = [
   {
     id: 1,
-    question: "What services do you offer?",
+    question: "What services does Dr. Rafia offer?",
     answer:
-      "We provide women-focused healthcare services including consultations, specialist care, pregnancy support, fertility guidance, and access to helpful health tools and resources.",
+      "Dr. Rafia Zahir provides care and guidance across gynecology, obstetrics, fertility and infertility, including pregnancy care, fertility evaluation and women's health concerns.",
   },
   {
     id: 2,
     question: "Can I book an appointment online?",
     answer:
-      "Yes. You can book an appointment online and choose the available consultation option that best suits your needs.",
+      "Yes. You can request an online consultation with Dr. Rafia, subject to availability and the appropriate clinical requirements.",
   },
   {
     id: 3,
-    question: "Do you provide pregnancy and prenatal guidance?",
+    question: "Does Dr. Rafia provide fertility and infertility consultations?",
     answer:
-      "Yes. We provide pregnancy-related guidance and resources to help you understand each stage of pregnancy and make informed healthcare decisions.",
+      "Yes. Fertility and infertility are core areas of Dr. Rafia's clinical expertise. Consultations can help assess your history, concerns and appropriate next steps.",
   },
   {
     id: 4,
-    question: "Can I consult a specialist?",
+    question: "Can I consult Dr. Rafia from outside Pakistan?",
     answer:
-      "Yes. You can access specialist care for women's health concerns and connect with qualified healthcare professionals based on your needs.",
+      "Online consultation options may be available for eligible overseas patients, subject to clinical, licensing and service availability requirements.",
   },
   {
     id: 5,
-    question: "Are your health tools a replacement for medical advice?",
+    question: "Can I get help understanding my lab test results?",
     answer:
-      "No. Our calculators, trackers, and educational resources are designed to provide helpful information and support. They should not replace professional medical consultation or diagnosis.",
+      "A healthcare professional can help you understand what a test result may mean in the context of your symptoms and medical history. A result should not be interpreted in isolation.",
   },
   {
     id: 6,
-    question: "How can I get help if I have more questions?",
+    question: "When should I see a gynecologist?",
     answer:
-      "If you need additional assistance, you can contact our team or book a consultation to discuss your concerns with a healthcare professional.",
+      "Consider speaking with a gynecologist when you have persistent or concerning symptoms, menstrual problems, reproductive-health concerns, pregnancy-related questions or fertility concerns.",
   },
 ];
 
@@ -74,7 +75,7 @@ export default function FAQSection() {
             <h2 className="faq-title">
               {t("Frequently Asked")}
               <br />
-              {t("Questions")}
+              {t("Questions About Women's Health")}
             </h2>
           </div>
 

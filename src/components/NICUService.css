@@ -1,0 +1,1657 @@
+/* =========================================================
+   DR. RAFYA ZAHIR
+   NICU SERVICE PAGE
+   ========================================================= */
+
+.nicu-page {
+  --nicu-container: 88rem;
+
+  --nicu-black: var(--black, #111111);
+  --nicu-white: var(--white, #ffffff);
+
+  --nicu-pink: var(--rich-pink, #ec4899);
+  --nicu-gold: var(--gold, #cca331);
+
+  --nicu-muted: var(
+    --text-muted,
+    #64748b
+  );
+
+  --nicu-border: var(
+    --card-border,
+    #e7e7e7
+  );
+
+  --nicu-shadow: var(
+    --card-shadow,
+    0 10px 35px rgba(15, 23, 42, 0.06)
+  );
+
+  --nicu-shadow-hover: var(
+    --card-shadow-hover,
+    0 18px 45px rgba(15, 23, 42, 0.10)
+  );
+
+  background: #ffffff;
+
+  color: var(--nicu-black);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   GLOBAL CONTAINER
+   ========================================================= */
+
+.nicu-container {
+  width: 100%;
+
+  max-width: var(--nicu-container);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.nicu-section {
+  padding:
+    6rem 0;
+
+  background: #ffffff;
+}
+
+.nicu-soft-section {
+  background:
+    #fafafa;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.nicu-section-header {
+  max-width: 720px;
+
+  margin:
+    0 auto 3.5rem;
+
+  text-align: center;
+}
+
+.nicu-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  margin-bottom: 1rem;
+
+  padding:
+    0.5rem 0.85rem;
+
+  border-radius: 9999px;
+
+  background:
+    rgba(236, 72, 153, 0.10);
+
+  color: var(--nicu-pink);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform: uppercase;
+}
+
+.nicu-section-header h2 {
+  margin: 0;
+
+  color: var(--nicu-black);
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      2.8rem
+    );
+
+  line-height: 1.18;
+
+  letter-spacing:
+    -0.03em;
+
+  font-weight: 800;
+}
+
+.nicu-section-header p {
+  margin:
+    1rem auto 0;
+
+  max-width: 650px;
+
+  color: var(--nicu-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.nicu-hero {
+  position: relative;
+
+  padding:
+    5rem 0 6rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff9fc 52%,
+      #ffffff 100%
+    );
+}
+
+.nicu-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  top: -220px;
+
+  right: -160px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(236, 72, 153, 0.06);
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+.nicu-hero-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.03fr)
+    minmax(0, 0.97fr);
+
+  align-items: center;
+
+  gap: 5rem;
+}
+
+.nicu-hero-content {
+  max-width: 680px;
+}
+
+.nicu-hero-content h1 {
+  margin: 0;
+
+  color: var(--nicu-black);
+
+  font-size:
+    clamp(
+      2.4rem,
+      5vw,
+      4.25rem
+    );
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -0.045em;
+
+  font-weight: 800;
+}
+
+.nicu-hero-lead {
+  margin:
+    1.4rem 0 0;
+
+  color: var(--nicu-pink);
+
+  font-size:
+    clamp(
+      1.05rem,
+      2vw,
+      1.3rem
+    );
+
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+.nicu-hero-description {
+  max-width: 620px;
+
+  margin:
+    1rem 0 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.nicu-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+
+  margin-top: 2rem;
+}
+
+.nicu-primary-btn,
+.nicu-secondary-btn {
+  min-height: 48px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    0.75rem 1.25rem;
+
+  border-radius: 9999px;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nicu-primary-btn {
+  background: var(--nicu-pink);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 22px
+    rgba(236, 72, 153, 0.18);
+}
+
+.nicu-primary-btn:hover {
+  background: var(--nicu-gold);
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(204, 163, 49, 0.18);
+}
+
+.nicu-primary-btn svg {
+  transition:
+    transform 0.25s ease;
+}
+
+.nicu-primary-btn:hover svg {
+  transform:
+    translateX(3px);
+}
+
+.nicu-secondary-btn {
+  border:
+    1px solid
+    var(--nicu-border);
+
+  background: #ffffff;
+
+  color: var(--nicu-black);
+}
+
+.nicu-secondary-btn:hover {
+  border-color:
+    rgba(236, 72, 153, 0.35);
+
+  color: var(--nicu-pink);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO TRUST
+   ========================================================= */
+
+.nicu-hero-trust {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap:
+    0.75rem 1.25rem;
+
+  margin-top: 1.5rem;
+}
+
+.nicu-hero-trust div {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+}
+
+.nicu-hero-trust svg {
+  color: var(--nicu-gold);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.nicu-hero-visual {
+  position: relative;
+}
+
+.nicu-hero-image-wrap {
+  position: relative;
+
+  overflow: visible;
+
+  border-radius: 28px;
+}
+
+.nicu-hero-image-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    18px -18px -18px 18px;
+
+  border:
+    1px solid
+    rgba(204, 163, 49, 0.25);
+
+  border-radius: 28px;
+
+  z-index: 0;
+}
+
+.nicu-hero-image-wrap img {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 0.92;
+
+  object-fit: cover;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 50px
+    rgba(15, 23, 42, 0.13);
+}
+
+.nicu-floating-card {
+  position: absolute;
+
+  z-index: 2;
+
+  left: -28px;
+
+  bottom: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 205px;
+
+  padding:
+    13px 15px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--nicu-border);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(15, 23, 42, 0.12);
+}
+
+.nicu-floating-icon {
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background:
+    rgba(236, 72, 153, 0.10);
+
+  color: var(--nicu-pink);
+}
+
+.nicu-floating-card div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.nicu-floating-card strong {
+  color: var(--nicu-black);
+
+  font-size: 0.82rem;
+}
+
+.nicu-floating-card span {
+  color: var(--nicu-muted);
+
+  font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.nicu-intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: 5rem;
+}
+
+.nicu-intro-image img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 0.9;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+
+  box-shadow: var(--nicu-shadow);
+}
+
+.nicu-intro-content {
+  max-width: 680px;
+}
+
+.nicu-intro-content h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  line-height: 1.15;
+
+  letter-spacing:
+    -0.03em;
+
+  font-weight: 800;
+}
+
+.nicu-intro-content p {
+  margin:
+    1rem 0 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.98rem;
+
+  line-height: 1.75;
+}
+
+.nicu-intro-content .nicu-primary-btn {
+  margin-top: 1.5rem;
+}
+
+
+/* =========================================================
+   INFO CARDS
+   ========================================================= */
+
+.nicu-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1.25rem;
+}
+
+.nicu-info-card {
+  padding:
+    2rem 1.6rem;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--nicu-border);
+
+  border-radius: 22px;
+
+  box-shadow: var(--nicu-shadow);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nicu-info-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(236, 72, 153, 0.28);
+
+  box-shadow:
+    var(--nicu-shadow-hover);
+}
+
+.nicu-card-icon,
+.nicu-feature-card-icon,
+.nicu-reason-icon {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    rgba(236, 72, 153, 0.09);
+
+  color: var(--nicu-pink);
+}
+
+.nicu-info-card h3 {
+  margin:
+    1.15rem 0 0.6rem;
+
+  color: var(--nicu-black);
+
+  font-size: 1.1rem;
+
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+.nicu-info-card p {
+  margin: 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPLIT SECTION
+   ========================================================= */
+
+.nicu-split-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 5rem;
+}
+
+.nicu-split-content {
+  max-width: 640px;
+}
+
+.nicu-split-content h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  line-height: 1.16;
+
+  letter-spacing:
+    -0.03em;
+
+  font-weight: 800;
+}
+
+.nicu-split-content p {
+  margin:
+    1rem 0 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.98rem;
+
+  line-height: 1.75;
+}
+
+.nicu-feature-image img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 0.82;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+
+  box-shadow: var(--nicu-shadow);
+}
+
+
+/* =========================================================
+   CHECK LIST
+   ========================================================= */
+
+.nicu-check-list {
+  display: grid;
+
+  gap: 0.8rem;
+
+  margin-top: 1.5rem;
+}
+
+.nicu-check-list div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--nicu-black);
+
+  font-size: 0.9rem;
+
+  font-weight: 650;
+}
+
+.nicu-check-list svg {
+  color: var(--nicu-gold);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FEATURE GRID
+   ========================================================= */
+
+.nicu-feature-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1.25rem;
+}
+
+.nicu-feature-card {
+  padding:
+    1.8rem 1.6rem;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--nicu-border);
+
+  border-radius: 22px;
+
+  box-shadow: var(--nicu-shadow);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nicu-feature-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(236, 72, 153, 0.28);
+
+  box-shadow:
+    var(--nicu-shadow-hover);
+}
+
+.nicu-feature-card h3 {
+  margin:
+    1rem 0 0.55rem;
+
+  color: var(--nicu-black);
+
+  font-size: 1rem;
+
+  font-weight: 750;
+}
+
+.nicu-feature-card p {
+  margin: 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.86rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.nicu-gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  grid-auto-rows:
+    210px;
+
+  gap: 1rem;
+}
+
+.nicu-gallery-item {
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #f5f5f5;
+}
+
+.nicu-gallery-item-1 {
+  grid-column:
+    span 2;
+
+  grid-row:
+    span 2;
+}
+
+.nicu-gallery-item-2 {
+  grid-column:
+    span 2;
+}
+
+.nicu-gallery-item img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.nicu-gallery-item:hover img {
+  transform:
+    scale(1.04);
+}
+
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.nicu-process {
+  position: relative;
+
+  max-width: 920px;
+
+  margin:
+    0 auto;
+}
+
+.nicu-process::before {
+  content: "";
+
+  position: absolute;
+
+  top: 25px;
+
+  bottom: 25px;
+
+  left: 24px;
+
+  width: 1px;
+
+  background:
+    #e5e7eb;
+}
+
+.nicu-process-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    minmax(0, 1fr);
+
+  gap: 1.5rem;
+
+  padding-bottom: 2rem;
+}
+
+.nicu-process-item:last-child {
+  padding-bottom: 0;
+}
+
+.nicu-process-number {
+  position: relative;
+
+  z-index: 1;
+
+  width: 49px;
+
+  height: 49px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(236, 72, 153, 0.22);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: var(--nicu-pink);
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+}
+
+.nicu-process-content {
+  padding:
+    0.2rem 0 1.3rem;
+
+  border-bottom:
+    1px solid
+    #f0f0f0;
+}
+
+.nicu-process-item:last-child
+  .nicu-process-content {
+  border-bottom: 0;
+}
+
+.nicu-process-label {
+  color: var(--nicu-gold);
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform: uppercase;
+}
+
+.nicu-process-content h3 {
+  margin:
+    0.45rem 0 0.55rem;
+
+  color: var(--nicu-black);
+
+  font-size: 1.05rem;
+
+  line-height: 1.45;
+
+  font-weight: 750;
+}
+
+.nicu-process-content p {
+  margin: 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BOX
+   ========================================================= */
+
+.nicu-cta-section {
+  padding:
+    0 0 6rem;
+
+  background: #ffffff;
+}
+
+.nicu-cta-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+
+  padding:
+    2rem 2.25rem;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7fb,
+      #ffffff
+    );
+
+  border:
+    1px solid
+    rgba(236, 72, 153, 0.18);
+
+  box-shadow: var(--nicu-shadow);
+}
+
+.nicu-cta-icon {
+  width: 56px;
+
+  height: 56px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 17px;
+
+  background:
+    rgba(236, 72, 153, 0.10);
+
+  color: var(--nicu-pink);
+}
+
+.nicu-cta-content {
+  flex: 1;
+}
+
+.nicu-cta-content .nicu-eyebrow {
+  margin-bottom: 0.45rem;
+}
+
+.nicu-cta-content h2 {
+  margin: 0;
+
+  color: var(--nicu-black);
+
+  font-size:
+    clamp(
+      1.35rem,
+      3vw,
+      2rem
+    );
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.nicu-cta-content p {
+  margin:
+    0.45rem 0 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.88rem;
+
+  line-height: 1.6;
+}
+
+.nicu-cta-box .nicu-primary-btn {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   REASONS GRID
+   ========================================================= */
+
+.nicu-reasons-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1.25rem;
+}
+
+.nicu-reason-card {
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    1.75rem 1.6rem;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    var(--nicu-border);
+
+  border-radius: 22px;
+
+  box-shadow: var(--nicu-shadow);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nicu-reason-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(236, 72, 153, 0.28);
+
+  box-shadow:
+    var(--nicu-shadow-hover);
+}
+
+.nicu-reason-card h3 {
+  margin:
+    1rem 0 0.6rem;
+
+  color: var(--nicu-black);
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+
+  font-weight: 750;
+}
+
+.nicu-reason-card p {
+  margin: 0;
+
+  color: var(--nicu-muted);
+
+  font-size: 0.86rem;
+
+  line-height: 1.7;
+}
+
+.nicu-card-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  width: fit-content;
+
+  margin-top: 1.2rem;
+
+  color: var(--nicu-pink);
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.nicu-card-link svg {
+  transition:
+    transform 0.2s ease;
+}
+
+.nicu-card-link:hover svg {
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.nicu-final-cta {
+  padding:
+    5rem 0;
+
+  background:
+    var(--black, #111111);
+}
+
+.nicu-final-cta-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.nicu-final-cta-inner .nicu-eyebrow {
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color:
+    #ffffff;
+}
+
+.nicu-final-cta-inner h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  line-height: 1.15;
+
+  letter-spacing:
+    -0.03em;
+
+  font-weight: 800;
+}
+
+.nicu-final-cta-inner p {
+  max-width: 650px;
+
+  margin:
+    0.75rem 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+.nicu-final-cta-inner
+  .nicu-primary-btn {
+  flex-shrink: 0;
+
+  background:
+    var(--nicu-pink);
+}
+
+.nicu-final-cta-inner
+  .nicu-primary-btn:hover {
+  background:
+    var(--nicu-gold);
+}
+
+
+/* =========================================================
+   EXISTING TESTIMONIAL / FAQ
+   ========================================================= */
+
+.nicu-existing-section {
+  background: #ffffff;
+}
+
+.nicu-faq-section {
+  padding-bottom: 5rem;
+}
+
+
+/* =========================================================
+   RTL
+   ========================================================= */
+
+[dir="rtl"] .nicu-primary-btn:hover svg {
+  transform:
+    translateX(-3px);
+}
+
+[dir="rtl"] .nicu-process::before {
+  left: auto;
+
+  right: 24px;
+}
+
+[dir="rtl"] .nicu-process-item {
+  grid-template-columns:
+    minmax(0, 1fr)
+    50px;
+}
+
+[dir="rtl"] .nicu-process-number {
+  grid-column: 2;
+
+  grid-row: 1;
+}
+
+[dir="rtl"] .nicu-process-content {
+  grid-column: 1;
+
+  grid-row: 1;
+}
+
+[dir="rtl"] .nicu-card-link svg {
+  transform:
+    rotate(180deg);
+}
+
+[dir="rtl"]
+  .nicu-card-link:hover svg {
+  transform:
+    rotate(180deg)
+    translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .nicu-section {
+    padding:
+      5rem 0;
+  }
+
+  .nicu-hero {
+    padding:
+      4rem 0 5rem;
+  }
+
+  .nicu-hero-grid,
+  .nicu-intro-grid,
+  .nicu-split-grid {
+    gap: 3rem;
+  }
+
+  .nicu-info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .nicu-feature-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .nicu-reasons-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .nicu-gallery {
+    grid-auto-rows: 180px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .nicu-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nicu-section {
+    padding:
+      3.75rem 0;
+  }
+
+  .nicu-hero {
+    padding:
+      3rem 0 4rem;
+  }
+
+  .nicu-hero-grid,
+  .nicu-intro-grid,
+  .nicu-split-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+  }
+
+  .nicu-hero-content h1 {
+    font-size:
+      clamp(
+        2.2rem,
+        11vw,
+        3rem
+      );
+  }
+
+  .nicu-hero-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .nicu-primary-btn,
+  .nicu-secondary-btn {
+    width: 100%;
+  }
+
+  .nicu-hero-trust {
+    flex-direction: column;
+
+    gap: 0.65rem;
+  }
+
+  .nicu-hero-image-wrap::before {
+    inset:
+      12px -10px -10px 10px;
+  }
+
+  .nicu-floating-card {
+    left: 14px;
+
+    bottom: 14px;
+
+    min-width: 185px;
+  }
+
+  .nicu-info-grid,
+  .nicu-feature-grid,
+  .nicu-reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nicu-section-header {
+    margin-bottom:
+      2.5rem;
+  }
+
+  .nicu-section-header h2 {
+    font-size:
+      2rem;
+  }
+
+  .nicu-gallery {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: 150px;
+  }
+
+  .nicu-gallery-item-1,
+  .nicu-gallery-item-2 {
+    grid-column:
+      span 2;
+  }
+
+  .nicu-gallery-item-1 {
+    grid-row:
+      span 2;
+  }
+
+  .nicu-cta-box {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding:
+      1.5rem;
+  }
+
+  .nicu-cta-box .nicu-primary-btn {
+    width: 100%;
+  }
+
+  .nicu-final-cta-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .nicu-final-cta-inner
+    .nicu-primary-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .nicu-section {
+    padding:
+      3.5rem 0;
+  }
+
+  .nicu-hero {
+    padding:
+      2.5rem 0 3.5rem;
+  }
+
+  .nicu-floating-card {
+    position: relative;
+
+    left: auto;
+
+    bottom: auto;
+
+    margin:
+      -28px 14px 0;
+
+    width:
+      calc(100% - 28px);
+
+    min-width: 0;
+  }
+
+  .nicu-hero-image-wrap {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .nicu-hero-image-wrap img {
+    aspect-ratio:
+      1 / 0.88;
+  }
+
+  .nicu-gallery {
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 210px;
+  }
+
+  .nicu-gallery-item-1,
+  .nicu-gallery-item-2 {
+    grid-column:
+      span 1;
+  }
+
+  .nicu-gallery-item-1 {
+    grid-row:
+      span 1;
+  }
+
+  .nicu-process {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nicu-process-item {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
+
+    gap: 1rem;
+  }
+
+  .nicu-process-number {
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 0.68rem;
+  }
+
+  .nicu-process::before {
+    left: 20px;
+  }
+
+  [dir="rtl"] .nicu-process::before {
+    left: auto;
+
+    right: 20px;
+  }
+
+  [dir="rtl"] .nicu-process-item {
+    grid-template-columns:
+      minmax(0, 1fr)
+      42px;
+  }
+
+  .nicu-info-card,
+  .nicu-feature-card,
+  .nicu-reason-card {
+    padding:
+      1.5rem;
+  }
+}
